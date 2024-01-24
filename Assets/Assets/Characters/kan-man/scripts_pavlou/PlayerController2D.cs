@@ -14,8 +14,8 @@ public class PlayerController2D : MonoBehaviour
     public GameObject attackPointLeft;
     public GameObject attackPointRight;
 
-    public float health = 100f;
-    float maxHealth = 100f;
+    public float health = 100;
+    public float maxHealth = 100f;
 
     [SerializeField] Image healthDisplay;
 
@@ -25,6 +25,8 @@ public class PlayerController2D : MonoBehaviour
     bool isGrounded = false;
     int jumps = 0;
 
+    public bool drankAtkSpdPotion = false;
+    public float atkSpeed = 10; 
     [SerializeField] float speed = 5;
     [SerializeField] float jumpForce = 350;
     [SerializeField] float groundCheckDistance = 0.7f;
