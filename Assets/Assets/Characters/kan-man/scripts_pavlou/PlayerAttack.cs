@@ -8,7 +8,6 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public int attackDamage = 40;
-    public LayerMask Enemies;
     
     void Update()
     {
@@ -17,14 +16,22 @@ public class PlayerAttack : MonoBehaviour
             Attack();
         }
     }
+   
     void Attack()
     {
         animator.SetTrigger("Attack");
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, Enemies);
-        foreach (Collider2D enemy in hitEnemies)
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
         {
-            enemy.GetComponent<Enemies>().TakeDamage(attackDamage);
-            Debug.Log("We hit " + enemy.name + " for " + attackDamage + " damage.");
+            Enemies enemyScript = enemy.GetComponent<Enemies>();
+
+            if (enemyScript != null)
+            {
+                enemyScript.TakeDamage(attackDamage);
+                Debug.Log("We hit " + enemy.name + " for " + attackDamage + " damage.");
+            }
         }
     }
     private void OnDrawGizmos()

@@ -14,7 +14,7 @@ public class Enemies : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log("Enemy health remaining " + currentHealth.ToString() + ".");
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             Die();
         }

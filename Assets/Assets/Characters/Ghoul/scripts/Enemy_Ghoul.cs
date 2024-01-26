@@ -179,7 +179,7 @@ public class Enemy_Ghoul : MonoBehaviour
         if (directionX < 0) thisSpriteRenderer.flipX = true;
         else if (directionX > 0) thisSpriteRenderer.flipX = false;
 
-        thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
+        //thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
     }
 
     void TakeDamage()
@@ -210,7 +210,7 @@ public class Enemy_Ghoul : MonoBehaviour
         if (directionX < 0) thisSpriteRenderer.flipX = true;
         else if (directionX > 0) thisSpriteRenderer.flipX = false;
 
-        thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
+        //thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
 
 
         //// If we have detected the player
