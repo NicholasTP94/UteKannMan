@@ -22596,8 +22596,8 @@ MonoBehaviour:
   drankAtkSpdPotion: 0
   atkSpeed: 10
   speed: 6
-  jumpForce: 420
-  groundCheckDistance: 1
+  jumpForce: 10
+  groundCheckDistance: 0.7
   Ground:
     serializedVersion: 2
     m_Bits: 64

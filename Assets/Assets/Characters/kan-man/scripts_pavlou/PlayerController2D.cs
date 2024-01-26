@@ -23,12 +23,12 @@ public class PlayerController2D : MonoBehaviour
     float directionX;
     //bool isDead = false;
     bool isGrounded = false;
-    int jumps = 0;
+    bool doubleJump = false;
 
     public bool drankAtkSpdPotion = false;
     public float atkSpeed = 10; 
     [SerializeField] float speed = 5;
-    [SerializeField] float jumpForce = 350;
+    [SerializeField] float jumpForce = 10;
     [SerializeField] float groundCheckDistance = 0.7f;
     public LayerMask Ground;
 
@@ -49,22 +49,17 @@ public class PlayerController2D : MonoBehaviour
         inpHor = Input.GetAxis("Horizontal");
         directionX = inpHor * speed;
 
-        if (isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumps = 0;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (isGrounded)
             {
-                thisRigidbody2D.AddForce(Vector3.up * jumpForce);
-                jumps++;
+                thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, jumpForce);
+                doubleJump = true;
             }
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Space) && jumps < 1)
+            else if (doubleJump)
             {
-                thisRigidbody2D.AddForce(Vector3.up * jumpForce);
-                thisAnimator.SetTrigger("DoubleJump");
-                jumps++;
+                thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, jumpForce);
+                doubleJump = false;
             }
         }
 
@@ -90,6 +85,17 @@ public class PlayerController2D : MonoBehaviour
         thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
     }
 
+    bool groundCheck()
+    {
+        Debug.DrawRay(transform.position, Vector2.down, Color.cyan);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, Ground);
+
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        else return false;
+    }
     //bool deathCheck()
     //{
     //    if (health <= 0)
@@ -99,28 +105,5 @@ public class PlayerController2D : MonoBehaviour
     //    }
     //    else return false;
     //}
-    public bool groundCheck()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, Ground);
 
-        if (hit.collider != null)
-        {
-            jumps = 0;
-            return true;
-        }
-        else return false;
-
-        //OtherWay
-        //RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, Vector2.down, groundCheckDistance, Ground);
-
-        //if (hit[0].collider != null)
-        //{
-        //    jumps = 0;
-        //    return true;
-        //}
-
-        //else
-        //    Debug.Log(hit[0].collider.name);
-        //    return false;
-    }
 }
