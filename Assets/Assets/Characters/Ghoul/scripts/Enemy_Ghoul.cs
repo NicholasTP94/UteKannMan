@@ -14,8 +14,6 @@ public class Enemy_Ghoul : MonoBehaviour
     bool isAlive = true;
 
 
-  
-
     float directionX = 1;
 
     public Vector3 startPosition;

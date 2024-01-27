@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d30cf7eb0751e84a915f79e2a940aca
+guid: 7b2341df3cb1a1b4c991c13ce896fb05
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,464 +106,383 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 4096
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 4096
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 4096
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 576
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 634f21325364fda4cb47d4dba1941668
-      internalID: -900536819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_1
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 576
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 202c80ce5b0d24c48baae3a90dc0add1
-      internalID: 18264399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_2
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 576
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57befb69e67185a4f945d4d85b376cee
-      internalID: -1257888855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_3
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 576
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 93e4c72b358e3dc44ae9aa5f3c30a967
-      internalID: 1004435601
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_4
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 576
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8457d1c5047b7f84d936474714b28e47
-      internalID: -1919308912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 384
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9241f849269f7a544b727855d19ef2cf
-      internalID: 1845620526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 384
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07dcd18f2c59d4c4c88e92cea1c9bdb8
-      internalID: 1836385172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_7
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29a89be4b2e6ceb4db07351b75866d74
-      internalID: -379935769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_8
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 384
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e9cff4be37c6c149975f34a3197e78f
-      internalID: 371702592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_9
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 384
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3844bfc2cd6c70c45b5ac6a2cf60545b
-      internalID: 151789566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db9d7d1287d4ac142ae7a389818c5004
-      internalID: 1557359643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_11
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 192
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2bed0144433e194e9d144e6e8b1f7a4
-      internalID: 1319703422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_12
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 192
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6fdcc32e1b765874c8b1d00be1dc5966
-      internalID: -701897763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_13
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 192
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7bfd1914b631ab4409c5ab31b1887b06
-      internalID: 709538283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_14
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 192
-        width: 192
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56ef9234b64d71547a0bd4518a9baae1
-      internalID: -475109495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_15
+      name: Samurai_Re-design-HeavyAttack_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 798729c97f7c01845986e738c3e4fdef
-      internalID: 167742169
+      spriteID: 05131efbba357a74ab25413b523afa6d
+      internalID: 325675812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_16
+      name: Samurai_Re-design-HeavyAttack_1
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12141c0c77e79ed488af42500a329d2a
-      internalID: -1144646414
+      spriteID: dcb2f9babf49fea4e811dab53cb1b78f
+      internalID: 2000965335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_17
+      name: Samurai_Re-design-HeavyAttack_2
       rect:
         serializedVersion: 2
         x: 384
         y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dd757a7a7cd5344f821d540af4cc458
-      internalID: 1407709790
+      spriteID: e2d7c6a87dffc5d4197b63f93099e913
+      internalID: -694045457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_18
+      name: Samurai_Re-design-HeavyAttack_3
       rect:
         serializedVersion: 2
         x: 576
         y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aa6db3720c665c49b3257715fcb12e8
-      internalID: 1821590303
+      spriteID: acbe879c48a42724f98b9c317e7eddeb
+      internalID: 2134218298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Death-NoBackground_19
+      name: Samurai_Re-design-HeavyAttack_4
       rect:
         serializedVersion: 2
         x: 768
         y: 0
         width: 192
         height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e67032ff859b0e49b79ceda03083562
-      internalID: 1337572269
+      spriteID: a9c28cd1b2aca15469af455f0a7038f2
+      internalID: 71191095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8205a1fe0100b94d94e974c0a8592ee
+      internalID: -198449107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_6
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4029fb9e6a8b9dd48b55c15841dda339
+      internalID: 1751991742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_7
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b7e33f244624141ab13df12f77148f
+      internalID: -161118920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_8
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f794c800dfc28f94287022b548e94984
+      internalID: 1850680096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_9
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2657019ad15644e9b1a13bb30cb17e
+      internalID: 1415804637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292b14304c694ca4186a4a6ede64b1b4
+      internalID: 871861510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_11
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799cf87826abd3b449f6126d4d16c563
+      internalID: 2013819769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_12
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30da444a9f00184db7d06987449fa57
+      internalID: -1236424778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_13
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8795a156ea955440a8bb41a622244c8
+      internalID: -695545002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_14
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6139d716f16097742b56e2498c15e898
+      internalID: -2051027077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_15
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f53dca32d681943a9d2b199289b622
+      internalID: 1995123078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_16
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3b4de638550954cb47afc1f8e71685
+      internalID: -210447566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Re-design-HeavyAttack_17
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 0
+        width: 192
+        height: 192
+      alignment: 9
+      pivot: {x: 0.4635, y: 0.557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672dda2c5aa0d42459be5912a8c9dd1d
+      internalID: -1632921976
       vertices: []
       indices: 
       edges: []
@@ -579,26 +498,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Samurai Re-design-Death-NoBackground_0: -900536819
-      Samurai Re-design-Death-NoBackground_1: 18264399
-      Samurai Re-design-Death-NoBackground_10: 1557359643
-      Samurai Re-design-Death-NoBackground_11: 1319703422
-      Samurai Re-design-Death-NoBackground_12: -701897763
-      Samurai Re-design-Death-NoBackground_13: 709538283
-      Samurai Re-design-Death-NoBackground_14: -475109495
-      Samurai Re-design-Death-NoBackground_15: 167742169
-      Samurai Re-design-Death-NoBackground_16: -1144646414
-      Samurai Re-design-Death-NoBackground_17: 1407709790
-      Samurai Re-design-Death-NoBackground_18: 1821590303
-      Samurai Re-design-Death-NoBackground_19: 1337572269
-      Samurai Re-design-Death-NoBackground_2: -1257888855
-      Samurai Re-design-Death-NoBackground_3: 1004435601
-      Samurai Re-design-Death-NoBackground_4: -1919308912
-      Samurai Re-design-Death-NoBackground_5: 1845620526
-      Samurai Re-design-Death-NoBackground_6: 1836385172
-      Samurai Re-design-Death-NoBackground_7: -379935769
-      Samurai Re-design-Death-NoBackground_8: 371702592
-      Samurai Re-design-Death-NoBackground_9: 151789566
+      Samurai_Re-design-HeavyAttack_0: 325675812
+      Samurai_Re-design-HeavyAttack_1: 2000965335
+      Samurai_Re-design-HeavyAttack_10: 871861510
+      Samurai_Re-design-HeavyAttack_11: 2013819769
+      Samurai_Re-design-HeavyAttack_12: -1236424778
+      Samurai_Re-design-HeavyAttack_13: -695545002
+      Samurai_Re-design-HeavyAttack_14: -2051027077
+      Samurai_Re-design-HeavyAttack_15: 1995123078
+      Samurai_Re-design-HeavyAttack_16: -210447566
+      Samurai_Re-design-HeavyAttack_17: -1632921976
+      Samurai_Re-design-HeavyAttack_2: -694045457
+      Samurai_Re-design-HeavyAttack_3: 2134218298
+      Samurai_Re-design-HeavyAttack_4: 71191095
+      Samurai_Re-design-HeavyAttack_5: -198449107
+      Samurai_Re-design-HeavyAttack_6: 1751991742
+      Samurai_Re-design-HeavyAttack_7: -161118920
+      Samurai_Re-design-HeavyAttack_8: 1850680096
+      Samurai_Re-design-HeavyAttack_9: 1415804637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

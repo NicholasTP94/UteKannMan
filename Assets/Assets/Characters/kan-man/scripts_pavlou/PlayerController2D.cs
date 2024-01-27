@@ -10,9 +10,12 @@ public class PlayerController2D : MonoBehaviour
     Rigidbody2D thisRigidbody2D;
     Animator thisAnimator;
     CircleCollider2D thisCircleCollider2D;
-    public GameObject attackPoint;
+    
     public GameObject attackPointLeft;
     public GameObject attackPointRight;
+
+    public GameObject attackPointLeftHeavy;
+    public GameObject attackPointRightHeavy;
 
     public float health = 100;
     public float maxHealth = 100f;
@@ -21,16 +24,35 @@ public class PlayerController2D : MonoBehaviour
 
     float inpHor;
     float directionX;
-    //bool isDead = false;
+
+    bool isDead = false;
     bool isGrounded = false;
     bool doubleJump = false;
 
     public bool drankAtkSpdPotion = false;
-    public float atkSpeed = 10; 
-    [SerializeField] float speed = 5;
+    public float atkSpeed = 10;
+    [SerializeField] float speed = 4;
     [SerializeField] float jumpForce = 10;
     [SerializeField] float groundCheckDistance = 0.7f;
     public LayerMask Ground;
+
+    //Attack Script Integrated
+    public Transform attackPoint;
+    public Transform attackPointHeavy;
+
+    public Transform leftLeg;
+    public Transform rightLeg;
+
+    public float attackRange = 1f;
+    public int lightAttackDamage = 20;
+    public int heavyAttackDamage = 40;
+    public float lightAttackCooldown = 1f;
+    public float heavyAttackCooldown = 3f;
+    private float lastLightAttackTimestamp = 0f;
+    private float lastHeavyAttackTimestamp = 0f;
+    public float heavyAttackThreshold = 0.5f;
+    public float attackTriggerTimeStamp;
+    public bool heavyAttacked = false;
 
     void Start()
     {
@@ -38,16 +60,36 @@ public class PlayerController2D : MonoBehaviour
         thisRigidbody2D = GetComponent<Rigidbody2D>();
         thisAnimator = GetComponent<Animator>();
         thisCircleCollider2D = GetComponent<CircleCollider2D>();
-
-
     }
 
     void Update()
     {
-        //isDead = deathCheck();
+        isDead = deathCheck();
         isGrounded = groundCheck();
         inpHor = Input.GetAxis("Horizontal");
+
         directionX = inpHor * speed;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            attackTriggerTimeStamp = Time.time;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            if (!heavyAttacked)
+            {
+                LightAttack();
+            }
+            heavyAttacked = false;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            if (!heavyAttacked)
+            {
+                checkForHeavyAttack();
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -67,15 +109,17 @@ public class PlayerController2D : MonoBehaviour
         {
             thisSpriteRenderer.flipX = true;
             attackPoint.transform.position = attackPointLeft.transform.position;
+            attackPointHeavy.transform.position = attackPointLeftHeavy.transform.position;
+
         }
 
         else if (inpHor > 0)
         {
-            attackPoint.transform.position = attackPointRight.transform.position;
-
             thisSpriteRenderer.flipX = false;
+            attackPoint.transform.position = attackPointRight.transform.position;
+            attackPointHeavy.transform.position = attackPointRightHeavy.transform.position;
         }
-
+        thisAnimator.SetFloat("yVelocity", thisRigidbody2D.velocity.y);
         thisAnimator.SetFloat("Speed", Mathf.Abs(inpHor));
         thisAnimator.SetBool("isGrounded", isGrounded);
     }
@@ -87,23 +131,97 @@ public class PlayerController2D : MonoBehaviour
 
     bool groundCheck()
     {
-        Debug.DrawRay(transform.position, Vector2.down, Color.cyan);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, Ground);
+        Debug.DrawRay(leftLeg.position, Vector2.down, Color.cyan);
+        RaycastHit2D leftLegHit = Physics2D.Raycast(leftLeg.position, Vector2.down, groundCheckDistance, Ground);
 
-        if (hit.collider != null)
+        Debug.DrawRay(rightLeg.position, Vector2.down, Color.cyan);
+        RaycastHit2D rightLegHit = Physics2D.Raycast(rightLeg.position, Vector2.down, groundCheckDistance, Ground);
+
+        if (leftLegHit.collider == null && rightLegHit.collider == null)
         {
+            return false; // Character is not grounded
+        }
+        return true;
+    }
+    bool deathCheck()
+    {
+        if (health <= 0)
+        {
+            thisAnimator.SetTrigger("Dead");
             return true;
         }
         else return false;
     }
-    //bool deathCheck()
-    //{
-    //    if (health <= 0)
-    //    {
-    //        return true;
-    //        thisAnimator.SetTrigger("Death");
-    //    }
-    //    else return false;
-    //}
 
+    //Part of the attack script
+    void checkForHeavyAttack()
+    {
+        float keyDownTime = Time.time - attackTriggerTimeStamp;
+        Debug.Log("KeyDown Time: " + keyDownTime);
+
+
+        if (keyDownTime >= heavyAttackThreshold)
+        {
+            HeavyAttack();
+        }
+
+    }
+    void LightAttack()
+    {
+        if (lastLightAttackTimestamp == 0 || (Time.time - lastLightAttackTimestamp >= lightAttackCooldown))
+        {
+            Debug.Log("Quick Slash!");
+            thisAnimator.SetTrigger("Attack");
+
+            Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(1.8f, 1.2f), 0f);
+
+            foreach (Collider2D collider in enemies)
+            {
+                if (collider.CompareTag("Enemy"))
+                {
+                    collider.GetComponent<Enemies>().TakeDamage(lightAttackDamage);
+                    Debug.Log("We hit " + collider.name + " for " + lightAttackDamage + " damage.");
+                }
+            }
+            lastLightAttackTimestamp = Time.time;
+        }
+        else
+        {
+            Debug.Log("Can't attack yet.");
+        }
+    }
+    void HeavyAttack()
+    {
+        if (lastHeavyAttackTimestamp == 0 || (Time.time - lastHeavyAttackTimestamp >= heavyAttackCooldown))
+        {
+            heavyAttacked = true;
+            attackTriggerTimeStamp = 0;
+
+            Debug.Log("Heavy Slash!");
+            thisAnimator.SetTrigger("HeavyAttack");
+
+            Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPointHeavy.position, new(2.1f, 2.4f), 0f);
+
+            foreach (Collider2D collider in enemies)
+            {
+                if (collider.CompareTag("Enemy"))
+                {
+                    collider.GetComponent<Enemies>().TakeDamage(heavyAttackDamage);
+                    Debug.Log("We hit " + collider.name + " for " + heavyAttackDamage + " damage.");
+                }
+            }
+            lastHeavyAttackTimestamp = Time.time;
+        }
+        else
+        {
+            Debug.Log("Can't attack yet.");
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        //light attack tinkering
+        Gizmos.DrawWireCube(attackPoint.position, new Vector3(1.8f, 1.2f, 0f));
+        //heavy attack tinkering
+        Gizmos.DrawWireCube(attackPointHeavy.position, new Vector3(2.1f, 2.4f, 0f));
+    }
 }
