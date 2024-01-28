@@ -13,6 +13,7 @@ public class Enemy_Ghoul : MonoBehaviour
     float lastHealth = 100;
     bool isAlive = true;
 
+    float damage;
 
     float directionX = 1;
 
@@ -36,7 +37,7 @@ public class Enemy_Ghoul : MonoBehaviour
     public Transform player;
 
     float distanceToPlayer;
-    public float chaseDistance =10f;
+    public float chaseDistance = 10f;
 
     // Attack stats
     public float attackRange = 1.5f;
@@ -90,7 +91,7 @@ public class Enemy_Ghoul : MonoBehaviour
                     Patrol();
                     break;
                 case EnemyState.Hit:
-                    TakeDamage();
+                    Hit();
                     break;
                 case EnemyState.Chase:
                     Chase();
@@ -111,50 +112,34 @@ public class Enemy_Ghoul : MonoBehaviour
     {
         if (health <= 0)
         {
-            isAlive = false;
             enemyState = EnemyState.Dead;
             return;
         }
-        else
+        else if (health < lastHealth)
         {
-            if (distanceToPlayer > chaseDistance)
+            enemyState = EnemyState.Hit;
+            return;
+        }
+
+        if (player != null)
+        {
+            distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+            if (distanceToPlayer <= attackRange)
             {
+                enemyState = EnemyState.Attack;
+            }
+            else if (distanceToPlayer > chaseDistance)
+            {
+                player = null;
                 enemyState = EnemyState.Patrol;
             }
             else
             {
                 enemyState = EnemyState.Chase;
-
-                if (distanceToPlayer <= attackRange)
-                {
-                    enemyState = EnemyState.Attack;
-                }
             }
-            
         }
-        //else if (distanceToPlayer <= 10)
-        //{
-        //    enemyState = EnemyState.Chase;
-        //}
-        //else (health > 0 && health < lastHealth)
-        //{
-        //        enemyState = EnemyState.Hit;
-        //    lastHealth = health;
-        //    return;
-        //}
-
-
-        //if (enemyState == EnemyState.Hit)
-        //{
-        //    if (Time.time >= lastHit + 0.3f)
-        //    {
-        //        // Always chase after being hit
-        //        enemyState = EnemyState.Chase;
-        //    }
-        //    return;
-        //}
     }
-
     #region StateMethods
 
     void Patrol()
@@ -180,8 +165,13 @@ public class Enemy_Ghoul : MonoBehaviour
         //thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
     }
 
-    void TakeDamage()
+    void Hit()
     {
+        if (Time.time > lastHit + 0.1f)
+        {
+            health -= damage;
+            lastHit = Time.time;
+        }
         if (!isAnimationState("GhoulHit"))
             thisAnimator.SetTrigger("GhoulHit");
     }
@@ -207,33 +197,6 @@ public class Enemy_Ghoul : MonoBehaviour
 
         if (directionX < 0) thisSpriteRenderer.flipX = true;
         else if (directionX > 0) thisSpriteRenderer.flipX = false;
-
-        //thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
-
-
-        //// If we have detected the player
-        //if (player != null)
-        //{
-        //    // First determing distance to player, in meters
-        //    distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
-
-        //    // Decide what to do based on distance
-        //    if (distanceToPlayer <= attackRange)
-        //    {
-        //        enemyState = EnemyState.Attack;
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        enemyState = EnemyState.Chase;
-        //        return;
-        //    }
-        //}
-        //else
-        //{
-        //    enemyState = EnemyState.Patrol;
-        //}
     }
 
     void Attack()
@@ -275,10 +238,7 @@ public class Enemy_Ghoul : MonoBehaviour
         Destroy(gameObject, 5f);
         return;
     }
-
     #endregion
-
-
 
     private void FixedUpdate()
     {
@@ -312,16 +272,6 @@ public class Enemy_Ghoul : MonoBehaviour
             }
         }
     }
-
-    public void Damage(float damage)
-    {
-        if (Time.time > lastHit + 0.1f)
-        {
-            health -= damage;
-            lastHit = Time.time;
-        }
-    }
-
     bool isAnimationState(string stateName)
     {
         if (thisAnimator.GetCurrentAnimatorStateInfo(0).IsName(stateName))
