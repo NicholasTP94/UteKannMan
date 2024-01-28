@@ -15,11 +15,92 @@ MonoBehaviour:
   Path: ../../FMOD Studio/UteKannManFmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638420619254545559
+  lastModified: 638420770459743374
   FileSizes:
   - Name: Desktop
-    Value: 806
+    Value: 1158
   Exists: 1
+--- !u!114 &-7377920304171773822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Objects/TorchIdle
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Objects/TorchIdle
+  Guid:
+    Data1: 646459349
+    Data2: 1271941808
+    Data3: -2056352852
+    Data4: 766905274
+  Banks:
+  - {fileID: 8653643679352663916}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 83496
+--- !u!114 &-5469042880472454433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/LightAttack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/LightAttack
+  Guid:
+    Data1: -370683385
+    Data2: 1126258152
+    Data3: -332476283
+    Data4: -1566593198
+  Banks:
+  - {fileID: 8653643679352663916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4665967685726074997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Jump
+  Guid:
+    Data1: -474235986
+    Data2: 1229662505
+    Data3: -684866384
+    Data4: -518817852
+  Banks:
+  - {fileID: 8653643679352663916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3230429222186690887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,11 +116,38 @@ MonoBehaviour:
   Path: ../../FMOD Studio/UteKannManFmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638420619254535552
+  lastModified: 638420770459733364
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-1003312380079141439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/PlayerDeathSound
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/PlayerDeathSound
+  Guid:
+    Data1: 1214255196
+    Data2: 1276854836
+    Data3: 666493367
+    Data4: -2100240078
+  Banks:
+  - {fileID: 8653643679352663916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,16 +164,23 @@ MonoBehaviour:
   - {fileID: -7806846283964427207}
   - {fileID: -3230429222186690887}
   - {fileID: 8653643679352663916}
+  - {fileID: 6256846561131196753}
   EditorEvents:
-  - {fileID: 6346350098048496370}
+  - {fileID: -5469042880472454433}
+  - {fileID: 2855943290916180995}
+  - {fileID: -1003312380079141439}
+  - {fileID: 695452101783258039}
+  - {fileID: -4665967685726074997}
+  - {fileID: -7377920304171773822}
+  - {fileID: 5665426884298316448}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3230429222186690887}
   StringsBanks:
   - {fileID: -7806846283964427207}
-  cacheTime: 638420619254725711
+  cacheTime: 638420778877466876
   cacheVersion: 131616
---- !u!114 &6346350098048496370
+--- !u!114 &695452101783258039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,14 +190,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/LightAttack
+  m_Name: event:/SFX/Player/PlayerFootsteps
   m_EditorClassIdentifier: 
-  Path: event:/LightAttack
+  Path: event:/SFX/Player/PlayerFootsteps
   Guid:
-    Data1: -370683385
-    Data2: 1126258152
-    Data3: -332476283
-    Data4: -1566593198
+    Data1: -177411160
+    Data2: 1236445096
+    Data3: -810507854
+    Data4: 1592565293
+  Banks:
+  - {fileID: 8653643679352663916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 350
+--- !u!114 &2855943290916180995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/HeavyAttack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/HeavyAttack
+  Guid:
+    Data1: 1272656972
+    Data2: 1279792681
+    Data3: 1301708968
+    Data4: -621567266
   Banks:
   - {fileID: 8653643679352663916}
   IsStream: 0
@@ -92,6 +234,53 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5665426884298316448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ambience/Level1Music
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ambience/Level1Music
+  Guid:
+    Data1: -1165528848
+    Data2: 1175980596
+    Data3: 749123730
+    Data4: -1842134826
+  Banks:
+  - {fileID: 6256846561131196753}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 81600
+--- !u!114 &6256846561131196753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Level1Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD Studio/UteKannManFmod/Build/Desktop/Level1Bank.bank
+  Name: Level1Bank
+  StudioPath: bank:/Level1Bank
+  lastModified: 638420778877466876
+  FileSizes:
+  - Name: Desktop
+    Value: 1090368
+  Exists: 1
 --- !u!114 &8653643679352663916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,8 +296,8 @@ MonoBehaviour:
   Path: ../../FMOD Studio/UteKannManFmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638420619254725711
+  lastModified: 638420777709651381
   FileSizes:
   - Name: Desktop
-    Value: 10368
+    Value: 1472256
   Exists: 1

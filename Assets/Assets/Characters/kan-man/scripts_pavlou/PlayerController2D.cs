@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using FMODUnity;
+using FMOD.Studio;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerController2D : MonoBehaviour
 {
-    [SerializeField] private EventReference lightAttackSound;
-
-
     SpriteRenderer thisSpriteRenderer;
     Rigidbody2D thisRigidbody2D;
     Animator thisAnimator;
     CircleCollider2D thisCircleCollider2D;
+
+    private EventInstance playerFootsteps;
     
     public GameObject attackPointLeft;
     public GameObject attackPointRight;
@@ -60,6 +59,7 @@ public class PlayerController2D : MonoBehaviour
 
     void Start()
     {
+        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
         thisSpriteRenderer = GetComponent<SpriteRenderer>();
         thisRigidbody2D = GetComponent<Rigidbody2D>();
         thisAnimator = GetComponent<Animator>();
@@ -99,13 +99,16 @@ public class PlayerController2D : MonoBehaviour
         {
             if (isGrounded)
             {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
                 thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, jumpForce);
                 doubleJump = true;
             }
             else if (doubleJump)
             {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
                 thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, jumpForce);
                 doubleJump = false;
+
             }
         }
 
@@ -131,6 +134,7 @@ public class PlayerController2D : MonoBehaviour
     private void FixedUpdate()
     {
         thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
+        UpdateSound();
     }
 
    
@@ -155,7 +159,7 @@ public class PlayerController2D : MonoBehaviour
             Debug.Log("Quick Slash!");
             thisAnimator.SetTrigger("Attack");
 
-            AudioManager.instance.PlayOneShot(lightAttackSound, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.lightAttack, this.transform.position);
 
             Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(1.8f, 1.2f), 0f);
 
@@ -183,6 +187,8 @@ public class PlayerController2D : MonoBehaviour
 
             Debug.Log("Heavy Slash!");
             thisAnimator.SetTrigger("HeavyAttack");
+
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.heavyAttack, this.transform.position);
 
             Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPointHeavy.position, new(2.1f, 2.4f), 0f);
 
@@ -231,5 +237,21 @@ public class PlayerController2D : MonoBehaviour
             return true;
         }
         else return false;
+    }
+    private void UpdateSound()
+    {
+        if(thisRigidbody2D.velocity.x != 0 && isGrounded)
+        {
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+        }
+        else
+        {
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
     }
 }

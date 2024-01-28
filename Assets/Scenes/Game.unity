@@ -2504,13 +2504,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: f5464692216fe4941abfeb62898f44c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 577678512}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: f5464692216fe4941abfeb62898f44c2, type: 3}
 --- !u!4 &577678510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: f5464692216fe4941abfeb62898f44c2, type: 3}
   m_PrefabInstance: {fileID: 577678509}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &577678511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: f5464692216fe4941abfeb62898f44c2, type: 3}
+  m_PrefabInstance: {fileID: 577678509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &577678512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577678511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 646459349
+      Data2: 1271941808
+      Data3: -2056352852
+      Data4: 766905274
+    Path: event:/SFX/Objects/TorchIdle
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1.3
+  OverrideMaxDistance: 5
 --- !u!1 &626007070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,7 +2837,8 @@ Transform:
   m_LocalPosition: {x: 2.3213153, y: 0.55601823, z: -0.30118418}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2145177099}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &731427418
@@ -22895,13 +22935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e55887aae77341a962ea02fc6c9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightAttackSound:
-    Guid:
-      Data1: -370683385
-      Data2: 1126258152
-      Data3: -332476283
-      Data4: -1566593198
-    Path: event:/LightAttack
   attackPointLeft: {fileID: 1689335226}
   attackPointRight: {fileID: 1582358255}
   attackPointLeftHeavy: {fileID: 86529021}
@@ -142122,6 +142155,92 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 5f8fddcd9622bc045acf2e8e79e3adfa, type: 3}
   m_PrefabInstance: {fileID: 2136254302}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2145177098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145177099}
+  - component: {fileID: 2145177100}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2145177099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145177098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 668766124}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2145177100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145177098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9ac434d5249da44a160e5e82c3acfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <level1OST>k__BackingField:
+    Guid:
+      Data1: -1165528848
+      Data2: 1175980596
+      Data3: 749123730
+      Data4: -1842134826
+    Path: event:/SFX/Ambience/Level1Music
+  <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: -177411160
+      Data2: 1236445096
+      Data3: -810507854
+      Data4: 1592565293
+    Path: event:/SFX/Player/PlayerFootsteps
+  <lightAttack>k__BackingField:
+    Guid:
+      Data1: -370683385
+      Data2: 1126258152
+      Data3: -332476283
+      Data4: -1566593198
+    Path: event:/SFX/Player/LightAttack
+  <heavyAttack>k__BackingField:
+    Guid:
+      Data1: 1272656972
+      Data2: 1279792681
+      Data3: 1301708968
+      Data4: -621567266
+    Path: event:/SFX/Player/HeavyAttack
+  <jump>k__BackingField:
+    Guid:
+      Data1: -474235986
+      Data2: 1229662505
+      Data3: -684866384
+      Data4: -518817852
+    Path: event:/SFX/Player/Jump
+  <torchIdle>k__BackingField:
+    Guid:
+      Data1: 646459349
+      Data2: 1271941808
+      Data3: -2056352852
+      Data4: 766905274
+    Path: event:/SFX/Objects/TorchIdle
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
