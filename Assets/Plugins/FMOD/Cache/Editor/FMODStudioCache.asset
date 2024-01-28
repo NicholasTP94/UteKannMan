@@ -178,7 +178,7 @@ MonoBehaviour:
   - {fileID: -3230429222186690887}
   StringsBanks:
   - {fileID: -7806846283964427207}
-  cacheTime: 638420778877466876
+  cacheTime: 638420782398491627
   cacheVersion: 131616
 --- !u!114 &695452101783258039
 MonoBehaviour:
@@ -276,7 +276,7 @@ MonoBehaviour:
   Path: ../../FMOD Studio/UteKannManFmod/Build/Desktop/Level1Bank.bank
   Name: Level1Bank
   StudioPath: bank:/Level1Bank
-  lastModified: 638420778877466876
+  lastModified: 638420782398491627
   FileSizes:
   - Name: Desktop
     Value: 1090368
@@ -296,7 +296,7 @@ MonoBehaviour:
   Path: ../../FMOD Studio/UteKannManFmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638420777709651381
+  lastModified: 638420782398286450
   FileSizes:
   - Name: Desktop
     Value: 1472256
