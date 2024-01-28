@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerController2D : MonoBehaviour
 {
+    [SerializeField] private EventReference lightAttackSound;
+
+
     SpriteRenderer thisSpriteRenderer;
     Rigidbody2D thisRigidbody2D;
     Animator thisAnimator;
@@ -129,29 +133,7 @@ public class PlayerController2D : MonoBehaviour
         thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
     }
 
-    bool groundCheck()
-    {
-        Debug.DrawRay(leftLeg.position, Vector2.down, Color.cyan);
-        RaycastHit2D leftLegHit = Physics2D.Raycast(leftLeg.position, Vector2.down, groundCheckDistance, Ground);
-
-        Debug.DrawRay(rightLeg.position, Vector2.down, Color.cyan);
-        RaycastHit2D rightLegHit = Physics2D.Raycast(rightLeg.position, Vector2.down, groundCheckDistance, Ground);
-
-        if (leftLegHit.collider == null && rightLegHit.collider == null)
-        {
-            return false; // Character is not grounded
-        }
-        return true;
-    }
-    bool deathCheck()
-    {
-        if (health <= 0)
-        {
-            thisAnimator.SetTrigger("Dead");
-            return true;
-        }
-        else return false;
-    }
+   
 
     //Part of the attack script
     void checkForHeavyAttack()
@@ -172,6 +154,8 @@ public class PlayerController2D : MonoBehaviour
         {
             Debug.Log("Quick Slash!");
             thisAnimator.SetTrigger("Attack");
+
+            AudioManager.instance.PlayOneShot(lightAttackSound, this.transform.position);
 
             Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(1.8f, 1.2f), 0f);
 
@@ -223,5 +207,29 @@ public class PlayerController2D : MonoBehaviour
         Gizmos.DrawWireCube(attackPoint.position, new Vector3(1.8f, 1.2f, 0f));
         //heavy attack tinkering
         Gizmos.DrawWireCube(attackPointHeavy.position, new Vector3(2.1f, 2.4f, 0f));
+    }
+
+    bool groundCheck()
+    {
+        Debug.DrawRay(leftLeg.position, Vector2.down, Color.cyan);
+        RaycastHit2D leftLegHit = Physics2D.Raycast(leftLeg.position, Vector2.down, groundCheckDistance, Ground);
+
+        Debug.DrawRay(rightLeg.position, Vector2.down, Color.cyan);
+        RaycastHit2D rightLegHit = Physics2D.Raycast(rightLeg.position, Vector2.down, groundCheckDistance, Ground);
+
+        if (leftLegHit.collider == null && rightLegHit.collider == null)
+        {
+            return false; // Character is not grounded
+        }
+        return true;
+    }
+    bool deathCheck()
+    {
+        if (health <= 0)
+        {
+            thisAnimator.SetTrigger("Dead");
+            return true;
+        }
+        else return false;
     }
 }

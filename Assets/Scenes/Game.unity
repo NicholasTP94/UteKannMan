@@ -1030,7 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 1107839270}
 --- !u!114 &195770483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2757,6 +2757,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 02e77a8720097d44e91a08d4db41589c, type: 3}
   m_PrefabInstance: {fileID: 657508588}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &668766122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668766124}
+  - component: {fileID: 668766123}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &668766123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668766122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c268f2d0c9dfb6c4cb30835610c882b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &668766124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668766122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3213153, y: 0.55601823, z: -0.30118418}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &731427418
 GameObject:
   m_ObjectHideFlags: 0
@@ -22851,6 +22895,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e55887aae77341a962ea02fc6c9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightAttackSound:
+    Guid:
+      Data1: -370683385
+      Data2: 1126258152
+      Data3: -332476283
+      Data4: -1566593198
+    Path: event:/LightAttack
   attackPointLeft: {fileID: 1689335226}
   attackPointRight: {fileID: 1582358255}
   attackPointLeftHeavy: {fileID: 86529021}
@@ -142087,3 +142138,4 @@ SceneRoots:
   - {fileID: 1251164217}
   - {fileID: 1001953615}
   - {fileID: 1340341774}
+  - {fileID: 668766124}
