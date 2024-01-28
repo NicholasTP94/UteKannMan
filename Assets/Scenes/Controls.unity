@@ -340,8 +340,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Left : A         Right : D\nJump :   Space\n\n  Light Attack : Left MB\n 
-    Heavy Attack : Right MB\n\n  Eternal Sunshine :  E"
+  m_text: "Left : A         Right : D\nJump :   Space\n\nLight Attack :  TAP Left
+    MB\n  Heavy Attack :  HOLD Left MB\n\nEternal Sunshine :  E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b434ad2264ec9534392521be178446e4, type: 2}
   m_sharedMaterial: {fileID: 1786700413062592055, guid: b434ad2264ec9534392521be178446e4, type: 2}

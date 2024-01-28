@@ -53,8 +53,9 @@ public class Enemy_Ghoul : MonoBehaviour
         thisRigidbody2D = GetComponent<Rigidbody2D>();
         thisAnimator = GetComponent<Animator>();
         thisCollider2D = GetComponent<BoxCollider2D>();
+        player = GetComponent<Transform>();
 
-        thisAnimator.SetBool("isGrounded", true);
+        //thisAnimator.SetBool("isGrounded", true);
 
         startPosition = transform.position;
         endPosition = transform.position + Vector3.right * patrolDistance;
@@ -219,11 +220,11 @@ public class Enemy_Ghoul : MonoBehaviour
         directionX = 0;
 
         //Stop the animation of Motion state
-        thisAnimator.SetFloat("GhoulSpeed", 0);
+        //thisAnimator.SetFloat("GhoulSpeed", 0);
 
         if (Time.time >= lastAttack)
         {
-            thisAnimator.SetTrigger("GhoulAttack");
+            //thisAnimator.SetTrigger("GhoulAttack");
             lastAttack = Time.time + attackDelay;
             //player.GetComponent<PlayerController2D>().Damage(20);
         }
