@@ -1,6 +1,87 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5733551168181589904
+--- !u!114 &-6066619923924049842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/HeavyAttack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/HeavyAttack
+  Guid:
+    Data1: 1272656972
+    Data2: 1279792681
+    Data3: 1301708968
+    Data4: -621567266
+  Banks:
+  - {fileID: -1571708561613753146}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4676254391172864911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Jump
+  Guid:
+    Data1: -474235986
+    Data2: 1229662505
+    Data3: -684866384
+    Data4: -518817852
+  Banks:
+  - {fileID: -1571708561613753146}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3024820737144945364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/PlayerDeathSound
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/PlayerDeathSound
+  Guid:
+    Data1: 1214255196
+    Data2: 1276854836
+    Data3: 666493367
+    Data4: -2100240078
+  Banks:
+  - {fileID: -1571708561613753146}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1571708561613753146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +101,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1472384
   Exists: 1
---- !u!114 &-4445566485615201151
+--- !u!114 &-1256748817344062828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,7 +120,7 @@ MonoBehaviour:
     Data3: -810507854
     Data4: 1592565293
   Banks:
-  - {fileID: -5733551168181589904}
+  - {fileID: -1571708561613753146}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -47,7 +128,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 350
---- !u!114 &-4079495780107351402
+--- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,18 +137,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  Path: ../../FMOD Studio/UteKannManFmod/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638420770459733364
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
---- !u!114 &-3956807065383433120
+  EditorBanks:
+  - {fileID: 2415845670238836476}
+  - {fileID: 1114383664592825682}
+  - {fileID: 4684166750400574088}
+  - {fileID: -1571708561613753146}
+  EditorEvents:
+  - {fileID: 5977600382651349407}
+  - {fileID: 4126171263081151830}
+  - {fileID: -6066619923924049842}
+  - {fileID: -3024820737144945364}
+  - {fileID: -1256748817344062828}
+  - {fileID: -4676254391172864911}
+  - {fileID: 6287523058283627160}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 4684166750400574088}
+  StringsBanks:
+  - {fileID: 2415845670238836476}
+  cacheTime: 638420788194105638
+  cacheVersion: 131616
+--- !u!114 &1114383664592825682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,147 +180,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1090368
   Exists: 1
---- !u!114 &-2072818562796212832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Ambience/Level1Music
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Ambience/Level1Music
-  Guid:
-    Data1: -1165528848
-    Data2: 1175980596
-    Data3: 749123730
-    Data4: -1842134826
-  Banks:
-  - {fileID: -3956807065383433120}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 81600
---- !u!114 &-1242187836550059682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/LightAttack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/LightAttack
-  Guid:
-    Data1: -370683385
-    Data2: 1126258152
-    Data3: -332476283
-    Data4: -1566593198
-  Banks:
-  - {fileID: -5733551168181589904}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1132538019306697158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Objects/TorchIdle
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Objects/TorchIdle
-  Guid:
-    Data1: 646459349
-    Data2: 1271941808
-    Data3: -2056352852
-    Data4: 766905274
-  Banks:
-  - {fileID: -5733551168181589904}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 83496
---- !u!114 &-176968824478451757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/PlayerDeathSound
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/PlayerDeathSound
-  Guid:
-    Data1: 1214255196
-    Data2: 1276854836
-    Data3: 666493367
-    Data4: -2100240078
-  Banks:
-  - {fileID: -5733551168181589904}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 1624097794640002602}
-  - {fileID: -3956807065383433120}
-  - {fileID: -4079495780107351402}
-  - {fileID: -5733551168181589904}
-  EditorEvents:
-  - {fileID: -2072818562796212832}
-  - {fileID: -1242187836550059682}
-  - {fileID: 3048444413648945099}
-  - {fileID: -176968824478451757}
-  - {fileID: -4445566485615201151}
-  - {fileID: 2617594587495608587}
-  - {fileID: -1132538019306697158}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -4079495780107351402}
-  StringsBanks:
-  - {fileID: 1624097794640002602}
-  cacheTime: 638420788194105638
-  cacheVersion: 131616
---- !u!114 &1624097794640002602
+--- !u!114 &2415845670238836476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,7 +200,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1158
   Exists: 1
---- !u!114 &2617594587495608587
+--- !u!114 &4126171263081151830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,16 +210,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Jump
+  m_Name: event:/SFX/Player/LightAttack
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Jump
+  Path: event:/SFX/Player/LightAttack
   Guid:
-    Data1: -474235986
-    Data2: 1229662505
-    Data3: -684866384
-    Data4: -518817852
+    Data1: -370683385
+    Data2: 1126258152
+    Data3: -332476283
+    Data4: -1566593198
   Banks:
-  - {fileID: -5733551168181589904}
+  - {fileID: -1571708561613753146}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -274,7 +227,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3048444413648945099
+--- !u!114 &4684166750400574088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD Studio/UteKannManFmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638420770459733364
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
+--- !u!114 &5977600382651349407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,20 +257,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/HeavyAttack
+  m_Name: event:/SFX/Ambience/Level1Music
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/HeavyAttack
+  Path: event:/SFX/Ambience/Level1Music
   Guid:
-    Data1: 1272656972
-    Data2: 1279792681
-    Data3: 1301708968
-    Data4: -621567266
+    Data1: -1165528848
+    Data2: 1175980596
+    Data3: 749123730
+    Data4: -1842134826
   Banks:
-  - {fileID: -5733551168181589904}
-  IsStream: 0
+  - {fileID: 1114383664592825682}
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 81600
+--- !u!114 &6287523058283627160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Objects/TorchIdle
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Objects/TorchIdle
+  Guid:
+    Data1: 646459349
+    Data2: 1271941808
+    Data3: -2056352852
+    Data4: 766905274
+  Banks:
+  - {fileID: -1571708561613753146}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 83496
