@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ad42771c-6414-471d-b976-414838fb3801}">
+		<property name="assetPath">
+			<value>EW_THAT_Hurts.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.6486167800453515</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{3a5a8037-8729-4d69-a924-53d20853eddf}</destination>
+		</relationship>
+	</object>
+</objects>
