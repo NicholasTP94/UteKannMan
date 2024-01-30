@@ -9,8 +9,9 @@ public class Enemy_Ghoul : MonoBehaviour
     Animator thisAnimator;
     BoxCollider2D thisCollider2D;
 
-    [Range(0, 100)] public float health = 100;
-    float lastHealth = 100;
+    // Ghoul_Heralth
+    [Range(0, 100)] public float health = 60;
+    float lastHealth = 60;
     bool isAlive = true;
 
     float damage;
@@ -163,7 +164,7 @@ public class Enemy_Ghoul : MonoBehaviour
         if (directionX < 0) thisSpriteRenderer.flipX = true;
         else if (directionX > 0) thisSpriteRenderer.flipX = false;
 
-        //thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
+        thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
     }
 
     void Hit()
@@ -220,11 +221,11 @@ public class Enemy_Ghoul : MonoBehaviour
         directionX = 0;
 
         //Stop the animation of Motion state
-        //thisAnimator.SetFloat("GhoulSpeed", 0);
+        thisAnimator.SetFloat("GhoulSpeed", 0);
 
         if (Time.time >= lastAttack)
         {
-            //thisAnimator.SetTrigger("GhoulAttack");
+            thisAnimator.SetTrigger("GhoulAttack");
             lastAttack = Time.time + attackDelay;
             //player.GetComponent<PlayerController2D>().Damage(20);
         }
@@ -234,9 +235,9 @@ public class Enemy_Ghoul : MonoBehaviour
     {
         // Will only run once
         thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, 5);
-        thisAnimator.SetTrigger("GhoulHit");
+        thisAnimator.SetTrigger("GhoulDeath");
         thisCollider2D.isTrigger = true;
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 1.2f);
         return;
     }
     #endregion
