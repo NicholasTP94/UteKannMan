@@ -172,7 +172,7 @@ public class PlayerController2D : MonoBehaviour
                 {
                    // collider.GetComponent<Enemies>().TakeDamage(lightAttackDamage);
                     Debug.Log("We hit " + collider.name + " for " + lightAttackDamage + " damage.");
-                    collider.GetComponent<Enemy_Ghoul>().TakeDamage(20); // Hits Enemy
+                    collider.GetComponent<Enemy_Ghoul>().TakeDamage(lightAttackDamage); // Hits Enemy
                     enemyHit = true;
                 }
             }
@@ -203,7 +203,7 @@ public class PlayerController2D : MonoBehaviour
                 {
                     //collider.GetComponent<Enemies>().TakeDamage(heavyAttackDamage);
                     Debug.Log("We hit " + collider.name + " for " + heavyAttackDamage + " damage.");
-                    collider.GetComponent<Enemy_Ghoul>().TakeDamage(30); // Hits enemy
+                    collider.GetComponent<Enemy_Ghoul>().TakeDamage(heavyAttackDamage); // Hits enemy
                     enemyHit = true;
                 }
             }
