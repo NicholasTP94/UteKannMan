@@ -10,9 +10,11 @@ public class Enemy_Ghoul : MonoBehaviour
     BoxCollider2D thisCollider2D;
 
     // Ghoul_Heralth
-    [Range(0, 100)] public float health = 60;
+    [Range(0, 60)] public float health = 60;
     float lastHealth = 60;
     bool isAlive = true;
+
+    bool attackingPlayer = false;
 
     float damage;
 
@@ -21,7 +23,7 @@ public class Enemy_Ghoul : MonoBehaviour
     public Vector3 startPosition;
     public Vector3 endPosition;
 
-    public float patrolDistance = 15;
+    public float patrolDistance = 3;
 
     // Enemy States
     public enum EnemyState
@@ -54,7 +56,6 @@ public class Enemy_Ghoul : MonoBehaviour
         thisRigidbody2D = GetComponent<Rigidbody2D>();
         thisAnimator = GetComponent<Animator>();
         thisCollider2D = GetComponent<BoxCollider2D>();
-        player = GetComponent<Transform>();
 
         //thisAnimator.SetBool("isGrounded", true);
 
@@ -67,6 +68,7 @@ public class Enemy_Ghoul : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(player.GetComponent<PlayerController2D>().enemyHit);
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (Vector2.Distance(transform.position, player.transform.position) <= attackRange)
@@ -117,11 +119,13 @@ public class Enemy_Ghoul : MonoBehaviour
             enemyState = EnemyState.Dead;
             return;
         }
-        else if (health < lastHealth)
+        else if (player.GetComponent<PlayerController2D>().enemyHit)
         {
             enemyState = EnemyState.Hit;
+            player.GetComponent<PlayerController2D>().enemyHit = false;
             return;
         }
+        
 
         if (player != null)
         {
@@ -133,7 +137,6 @@ public class Enemy_Ghoul : MonoBehaviour
             }
             else if (distanceToPlayer > chaseDistance)
             {
-                player = null;
                 enemyState = EnemyState.Patrol;
             }
             else
@@ -146,6 +149,9 @@ public class Enemy_Ghoul : MonoBehaviour
 
     void Patrol()
     {
+        attackingPlayer = false;
+        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+
         if (directionX > 0)
         {
             if (transform.position.x >= endPosition.x)
@@ -167,19 +173,31 @@ public class Enemy_Ghoul : MonoBehaviour
         thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
     }
 
-    void Hit()
+    //Takes Damage from player
+    public void TakeDamage(float _damage) 
     {
         if (Time.time > lastHit + 0.1f)
         {
-            health -= damage;
+            health -= _damage;
             lastHit = Time.time;
         }
+    }
+
+    // Plays the hit animation
+    public void Hit()
+    {
+        attackingPlayer = false;
+        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+
         if (!isAnimationState("GhoulHit"))
             thisAnimator.SetTrigger("GhoulHit");
     }
 
     void Chase()
     {
+        attackingPlayer = false;
+        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+
         if (transform.position.x > player.position.x)
         {
             directionX = -1;
@@ -203,6 +221,9 @@ public class Enemy_Ghoul : MonoBehaviour
 
     void Attack()
     {
+        attackingPlayer = true;
+        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+
         // Determine direction to player
         if (transform.position.x > player.position.x)
         {
@@ -227,16 +248,19 @@ public class Enemy_Ghoul : MonoBehaviour
         {
             thisAnimator.SetTrigger("GhoulAttack");
             lastAttack = Time.time + attackDelay;
-            //player.GetComponent<PlayerController2D>().Damage(20);
+            player.GetComponent<PlayerController2D>().Damage(20);
         }
     }
 
     void Dead()
     {
+        attackingPlayer = false;
+        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+
         // Will only run once
-        thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, 5);
+        //thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, 5);
         thisAnimator.SetTrigger("GhoulDeath");
-        thisCollider2D.isTrigger = true;
+        //thisCollider2D.isTrigger = true;
         Destroy(gameObject, 1.2f);
         return;
     }

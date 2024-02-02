@@ -57,6 +57,9 @@ public class PlayerController2D : MonoBehaviour
     public float attackTriggerTimeStamp;
     public bool heavyAttacked = false;
 
+    float lastHit = 0; // for the hit method //
+    public bool enemyHit = false; // Checks if the enemy is hit
+
     void Start()
     {
         playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
@@ -167,8 +170,10 @@ public class PlayerController2D : MonoBehaviour
             {
                 if (collider.CompareTag("Enemy"))
                 {
-                    collider.GetComponent<Enemies>().TakeDamage(lightAttackDamage);
+                   // collider.GetComponent<Enemies>().TakeDamage(lightAttackDamage);
                     Debug.Log("We hit " + collider.name + " for " + lightAttackDamage + " damage.");
+                    collider.GetComponent<Enemy_Ghoul>().TakeDamage(20); // Hits Enemy
+                    enemyHit = true;
                 }
             }
             lastLightAttackTimestamp = Time.time;
@@ -196,8 +201,10 @@ public class PlayerController2D : MonoBehaviour
             {
                 if (collider.CompareTag("Enemy"))
                 {
-                    collider.GetComponent<Enemies>().TakeDamage(heavyAttackDamage);
+                    //collider.GetComponent<Enemies>().TakeDamage(heavyAttackDamage);
                     Debug.Log("We hit " + collider.name + " for " + heavyAttackDamage + " damage.");
+                    collider.GetComponent<Enemy_Ghoul>().TakeDamage(30); // Hits enemy
+                    enemyHit = true;
                 }
             }
             lastHeavyAttackTimestamp = Time.time;
@@ -252,6 +259,15 @@ public class PlayerController2D : MonoBehaviour
         else
         {
             playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
+    public void Damage(float _damage) // Hit method //
+    {
+        if (Time.time > lastHit + 0.1f)
+        {
+            health -= _damage;
+            lastHit = Time.time;
         }
     }
 }
