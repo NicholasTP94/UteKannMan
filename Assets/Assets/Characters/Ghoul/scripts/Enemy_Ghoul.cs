@@ -187,6 +187,7 @@ public class Enemy_Ghoul : MonoBehaviour
     public void Hit()
     {
         attackingPlayer = false;
+        directionX = 0;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
 
         if (!isAnimationState("GhoulHit"))
@@ -255,8 +256,8 @@ public class Enemy_Ghoul : MonoBehaviour
     void Dead()
     {
         attackingPlayer = false;
+        directionX = 0;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
-
         // Will only run once
         //thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, 5);
         thisAnimator.SetTrigger("GhoulDeath");

@@ -62,6 +62,7 @@ public class PlayerController2D : MonoBehaviour
 
     void Start()
     {
+        health = maxHealth;
         playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
         thisSpriteRenderer = GetComponent<SpriteRenderer>();
         thisRigidbody2D = GetComponent<Rigidbody2D>();
@@ -240,6 +241,7 @@ public class PlayerController2D : MonoBehaviour
     {
         if (health <= 0)
         {
+
             thisAnimator.SetTrigger("Dead");
             return true;
         }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b8ca33264def2fe46bc60037de3c3751
+guid: a6c0c01e41093894bad7bbc6a242b28b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,7 +81,59 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -106,63 +158,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 4096
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_0
+      name: Samurai Re-design-hit_0
       rect:
         serializedVersion: 2
         x: 0
@@ -176,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25ee3ddb85cecc240bc7b01d1dafbc3a
-      internalID: -921392925
+      spriteID: c7ca7052bf0556445bf0193ab6a3e569
+      internalID: -1363410675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_1
+      name: Samurai Re-design-hit_1
       rect:
         serializedVersion: 2
         x: 192
@@ -197,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecf190b8c5fbd7b459b6417f74b19a2f
-      internalID: -1134177396
+      spriteID: e371eeab1a1f8bf45aa2443dd6c5da12
+      internalID: -248200565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_2
+      name: Samurai Re-design-hit_2
       rect:
         serializedVersion: 2
         x: 384
@@ -218,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8631d42dbbe7f9b4386209f007f448b9
-      internalID: -848933580
+      spriteID: 67299534c544fd44191baa6573ac533c
+      internalID: -878353128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_3
+      name: Samurai Re-design-hit_3
       rect:
         serializedVersion: 2
         x: 576
@@ -239,14 +239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1c62105caa19bf4bae20365e52af54f
-      internalID: -1715981850
+      spriteID: 0075aed282e1ed74d8d9b3abc8a45a00
+      internalID: -242969907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_4
+      name: Samurai Re-design-hit_4
       rect:
         serializedVersion: 2
         x: 0
@@ -260,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae99c7b7fb314744c8e803d14d849f9f
-      internalID: 1627179621
+      spriteID: b9523c8034f22da4f980d43d1d0bab5d
+      internalID: -161280762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_5
+      name: Samurai Re-design-hit_5
       rect:
         serializedVersion: 2
         x: 192
@@ -281,17 +281,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99c2a123482461748ad5eb63aaec3ba0
-      internalID: -666718069
+      spriteID: b2b790e90adb9084993e6dedc5ecffed
+      internalID: -642163634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_6
+      name: Samurai Re-design-hit_6
       rect:
         serializedVersion: 2
-        x: 384
+        x: 385
         y: 192
         width: 192
         height: 192
@@ -302,18 +302,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 920b153026a9417458cd7ff8efed568a
-      internalID: -330823992
+      spriteID: 9a90d5578080ede448acd4b424c57f53
+      internalID: 1509436059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_7
+      name: Samurai Re-design-hit_7
       rect:
         serializedVersion: 2
         x: 576
-        y: 192
+        y: 193
         width: 192
         height: 192
       alignment: 9
@@ -323,14 +323,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a82b849dcd7fb3b40a562ec623e1fb6f
-      internalID: -2128180068
+      spriteID: 8081f18692bea4e44bbad4ff673ae454
+      internalID: 1935840467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_8
+      name: Samurai Re-design-hit_8
       rect:
         serializedVersion: 2
         x: 0
@@ -344,14 +344,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 759c20c8b434d6e48a211c4fe2869a04
-      internalID: -338721594
+      spriteID: 8b627e4c512da6c4481ce05ef664b734
+      internalID: -1073721626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_9
+      name: Samurai Re-design-hit_9
       rect:
         serializedVersion: 2
         x: 192
@@ -365,14 +365,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef04288e47776e442a04490efac68d5b
-      internalID: -757190009
+      spriteID: e5396bbee9adc994ca7a9e1beada6667
+      internalID: -1726253974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_10
+      name: Samurai Re-design-hit_10
       rect:
         serializedVersion: 2
         x: 384
@@ -386,14 +386,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb4810f140a41f348bbe4f6a170892ac
-      internalID: 470036646
+      spriteID: cd77a97c782a4994eb704f97addd7986
+      internalID: -1706678009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Samurai Re-design-Idle_11
+      name: Samurai Re-design-hit_11
       rect:
         serializedVersion: 2
         x: 576
@@ -407,8 +407,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b51d0211575d6046b3d8c9c499a1d8d
-      internalID: -1414232066
+      spriteID: b6fd55aa3894a35418f8719b2b353802
+      internalID: 1332307179
       vertices: []
       indices: 
       edges: []
@@ -424,18 +424,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Samurai Re-design-Idle_0: -921392925
-      Samurai Re-design-Idle_1: -1134177396
-      Samurai Re-design-Idle_10: 470036646
-      Samurai Re-design-Idle_11: -1414232066
-      Samurai Re-design-Idle_2: -848933580
-      Samurai Re-design-Idle_3: -1715981850
-      Samurai Re-design-Idle_4: 1627179621
-      Samurai Re-design-Idle_5: -666718069
-      Samurai Re-design-Idle_6: -330823992
-      Samurai Re-design-Idle_7: -2128180068
-      Samurai Re-design-Idle_8: -338721594
-      Samurai Re-design-Idle_9: -757190009
+      Samurai Re-design-hit_0: -1363410675
+      Samurai Re-design-hit_1: -248200565
+      Samurai Re-design-hit_10: -1706678009
+      Samurai Re-design-hit_11: 1332307179
+      Samurai Re-design-hit_2: -878353128
+      Samurai Re-design-hit_3: -242969907
+      Samurai Re-design-hit_4: -161280762
+      Samurai Re-design-hit_5: -642163634
+      Samurai Re-design-hit_6: 1509436059
+      Samurai Re-design-hit_7: 1935840467
+      Samurai Re-design-hit_8: -1073721626
+      Samurai Re-design-hit_9: -1726253974
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

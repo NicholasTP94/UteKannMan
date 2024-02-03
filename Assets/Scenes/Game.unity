@@ -140546,10 +140546,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69eb7dc23b29264189c5a9c3f758cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <health>k__BackingField: 0
   movementSpeed: 4
   attackDamage: 0
   attackRange: 0
   attackSpeed: 0
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  isAlive: 0
+  isAwake: 0
 --- !u!1001 &2073174722
 PrefabInstance:
   m_ObjectHideFlags: 0
