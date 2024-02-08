@@ -15,7 +15,7 @@ public class Runes : MonoBehaviour
     void Start()
     {
         thisSpriteRenderer = GetComponent<SpriteRenderer>();
-        thisSpriteRenderer.enabled = false;
+       
     }
 
     void Update()
@@ -24,7 +24,7 @@ public class Runes : MonoBehaviour
         {
             if (insideCollider)
             {
-                thisSpriteRenderer.enabled = true;
+                gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("T_BirchTwig_Lit", typeof(Sprite)) as Sprite;
             }
         }
     }
