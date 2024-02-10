@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638432081438890538
+  lastModified: 638421628441572519
   FileSizes:
   - Name: Desktop
     Value: 1158
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638432081438890538
+  lastModified: 638421628441367201
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -178,7 +178,7 @@ MonoBehaviour:
   - {fileID: -5493160485279772541}
   StringsBanks:
   - {fileID: -7797496162982634686}
-  cacheTime: 638432081438970557
+  cacheTime: 638421628441998163
   cacheVersion: 131616
 --- !u!114 &546236922133864096
 MonoBehaviour:
@@ -195,7 +195,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.bank
   Name: Level1Bank
   StudioPath: bank:/Level1Bank
-  lastModified: 638432081438890538
+  lastModified: 638421628440926924
   FileSizes:
   - Name: Desktop
     Value: 1090368
@@ -269,7 +269,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638432081438970557
+  lastModified: 638421628441998163
   FileSizes:
   - Name: Desktop
     Value: 1472384
