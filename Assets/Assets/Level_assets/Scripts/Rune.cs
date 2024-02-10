@@ -5,68 +5,103 @@ using UnityEngine;
 
 public class Runes : MonoBehaviour
 {
-    //SpriteRenderer thisSpriteRenderer;
-    //CircleCollider2D thisCircleCollider;
-    public string triggerPlayer = "Player";
+    SpriteRenderer thisSpriteRenderer;
+    CircleCollider2D thisCircleCollider;
+    BoxCollider2D thisBoxCollider2D;
+
+
     public KeyCode activationButton = KeyCode.E;
-    private bool insideCollider = false;
-    public bool door1IsOpen = false;
-    public bool door2IsOpen = false;
-    public bool door3IsOpen = false;
-    public bool door4IsOpen = false;
-    int numberOfRunes;
-    int openDoor1 = 3;
-    int openDoor2 = 6;
-    int openDoor3 = 9;
-    int openDoor4 = 12;
+    public bool insideCollider = false;
+
+    public static int numberOfRunes = 0;
+    public bool openDoor1 = false;
+
+
 
 
     void Start()
     {
-        //thisSpriteRenderer = GetComponent<SpriteRenderer>();
-       
+
+        thisSpriteRenderer = GetComponent<SpriteRenderer>();
+        thisCircleCollider = GetComponent<CircleCollider2D>();
+        thisBoxCollider2D = GetComponent<BoxCollider2D>();
+
     }
 
-    void Update()
+    public void Update()
     {
-        if (Input.GetKeyDown(activationButton))
+
+        if (insideCollider && Input.GetKeyDown(activationButton))
         {
-            if (insideCollider)
-            {
-                gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("T_Harvest_Lit", typeof(Sprite)) as Sprite;
-                numberOfRunes++;
-            }
+
+            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("T_Harvest_Lit", typeof(Sprite)) as Sprite;
+
+            numberOfRunes++;
+
+            Debug.Log("You have" + numberOfRunes);
+
+            thisCircleCollider.enabled = false;
+            insideCollider = false;
+
         }
+
+
+
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(triggerPlayer))
+
+        if (other.CompareTag("Player"))
         {
+            Debug.Log("Player has entered");
+
             insideCollider = true;
+
         }
 
     }
 
-    void OpenDoor()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (numberOfRunes == openDoor1)
+        if (other.CompareTag("Player"))
         {
-            door1IsOpen=true;
-        }
-
-        if (numberOfRunes == openDoor2)
-        {
-            door2IsOpen=true;
-        }
-
-        if(numberOfRunes == openDoor3)
-        {
-            door3IsOpen=true;
-        }
-
-        if (numberOfRunes == openDoor4)
-        {
-            door4IsOpen = true;
+            insideCollider = false;
+            Debug.Log("Player has left");
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+    //public void FirstDoor()
+    //{
+    //    GameObject.Find("door1");
+    //    Destroy(gameObject);
+
+    //}
+
+    //void SecondDoor()
+    //{
+    //    GameObject SecondDoor = GameObject.Find("Door (2)");
+    //    thisBoxCollider2D.enabled = false;
+    //}
+
+    //void ThirdDoor()
+    //{
+    //    GameObject ThirdDoor = GameObject.Find("Door (3)");
+    //    thisBoxCollider2D.enabled = false;
+    //}
+
+    //void FourthDoor()
+    //{
+    //    GameObject FourthDoor = GameObject.Find("Door (4)");
+    //    thisBoxCollider2D.enabled = false;
+    //}
 }

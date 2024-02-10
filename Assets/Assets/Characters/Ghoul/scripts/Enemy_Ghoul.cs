@@ -68,7 +68,7 @@ public class Enemy_Ghoul : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.GetComponent<PlayerController2D>().enemyHit);
+        //Debug.Log(player.GetComponent<PlayerController2D>().enemyHit);
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (Vector2.Distance(transform.position, player.transform.position) <= attackRange)
