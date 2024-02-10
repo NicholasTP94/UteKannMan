@@ -10,11 +10,10 @@ public class Enemy_Boss : MonoBehaviour
     BoxCollider2D thisCollider2D;
 
     // Boss_Heralth
-    [Range(0, 60)] public float health = 240;
-    float lastHealth = 240;
+    [Range(0, 240)] public float health = 240;
     bool isAlive = true;
 
-    bool attackingPlayer = false;
+    bool AttackPlayer = false;
 
     float damage;
 
@@ -28,7 +27,7 @@ public class Enemy_Boss : MonoBehaviour
     // Enemy States
     public enum EnemyState
     {
-        Patrol,
+        Idle,
         Hit,
         Chase,
         Attack,
@@ -49,6 +48,7 @@ public class Enemy_Boss : MonoBehaviour
 
     float lastHit = 0;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,10 +57,12 @@ public class Enemy_Boss : MonoBehaviour
         thisAnimator = GetComponent<Animator>();
         thisCollider2D = GetComponent<BoxCollider2D>();
 
+        Physics2D.IgnoreLayerCollision(3, 8);
+
         startPosition = transform.position;
         endPosition = transform.position + Vector3.right * patrolDistance;
 
-        enemyState = EnemyState.Patrol;
+        enemyState = EnemyState.Idle;
     }
 
     // Update is called once per frame
@@ -89,8 +91,8 @@ public class Enemy_Boss : MonoBehaviour
 
             switch (enemyState)
             {
-                case EnemyState.Patrol:
-                    Patrol();
+                case EnemyState.Idle:
+                    Idle();
                     break;
                 case EnemyState.Hit:
                     Hit();
@@ -135,7 +137,7 @@ public class Enemy_Boss : MonoBehaviour
             }
             else if (distanceToPlayer > chaseDistance)
             {
-                enemyState = EnemyState.Patrol;
+                enemyState = EnemyState.Idle;
             }
             else
             {
@@ -145,30 +147,13 @@ public class Enemy_Boss : MonoBehaviour
     }
     #region StateMethods
 
-    void Patrol()
+    void Idle()
     {
-        attackingPlayer = false;
-        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+        AttackPlayer = false;
+        thisAnimator.SetBool("AttackPlayer", AttackPlayer);
+        thisAnimator.SetTrigger("Idle");
 
-        if (directionX > 0)
-        {
-            if (transform.position.x >= endPosition.x)
-            {
-                directionX = -1;
-            }
-        }
-        else if (directionX < 0)
-        {
-            if (transform.position.x <= startPosition.x)
-            {
-                directionX = 1;
-            }
-        }
-
-        if (directionX < 0) thisSpriteRenderer.flipX = true;
-        else if (directionX > 0) thisSpriteRenderer.flipX = false;
-
-        thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
+        directionX = 0;
     }
 
     //Takes Damage from player
@@ -184,18 +169,19 @@ public class Enemy_Boss : MonoBehaviour
     // Plays the hit animation
     public void Hit()
     {
-        attackingPlayer = false;
+        AttackPlayer = false;
         directionX = 0;
-        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+        thisAnimator.SetBool("AttackPlayer", AttackPlayer);
 
-        if (!isAnimationState("GhoulHit"))
-            thisAnimator.SetTrigger("GhoulHit");
+        if (!isAnimationState("BossHit"))
+            thisAnimator.SetTrigger("BossHit");
     }
 
     void Chase()
     {
-        attackingPlayer = false;
-        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+        AttackPlayer = false;
+        thisAnimator.SetBool("AttackPlayer", AttackPlayer);
+        thisAnimator.SetTrigger("BossChase");
 
         if (transform.position.x > player.position.x)
         {
@@ -220,8 +206,8 @@ public class Enemy_Boss : MonoBehaviour
 
     void Attack()
     {
-        attackingPlayer = true;
-        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+        AttackPlayer = true;
+        thisAnimator.SetBool("AttackPlayer", AttackPlayer);
 
         // Determine direction to player
         if (transform.position.x > player.position.x)
@@ -241,11 +227,11 @@ public class Enemy_Boss : MonoBehaviour
         directionX = 0;
 
         //Stop the animation of Motion state
-        thisAnimator.SetFloat("GhoulSpeed", 0);
+        thisAnimator.SetFloat("BossSpeed", 0);
 
         if (Time.time >= lastAttack)
         {
-            thisAnimator.SetTrigger("GhoulAttack");
+            thisAnimator.SetTrigger("BossAttack");
             lastAttack = Time.time + attackDelay;
             player.GetComponent<PlayerController2D>().Damage(20);
         }
@@ -253,13 +239,10 @@ public class Enemy_Boss : MonoBehaviour
 
     void Dead()
     {
-        attackingPlayer = false;
+        AttackPlayer = false;
         directionX = 0;
-        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
-        // Will only run once
-        //thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, 5);
-        thisAnimator.SetTrigger("GhoulDeath");
-        //thisCollider2D.isTrigger = true;
+        thisAnimator.SetBool("AttackPlayer", AttackPlayer);
+        thisAnimator.SetTrigger("BossDeath");
         Destroy(gameObject, 1.2f);
         return;
     }
