@@ -174,8 +174,6 @@ public class PlayerController2D : MonoBehaviour
                    // collider.GetComponent<Enemies>().TakeDamage(lightAttackDamage);
                     Debug.Log("We hit " + collider.name + " for " + lightAttackDamage + " damage.");
                     collider.GetComponent<Enemy_Ghoul>().TakeDamage(lightAttackDamage); // Hits Enemy
-                    collider.GetComponent<Enemy_Boss>().TakeDamage(lightAttackDamage); // Hits Enemy
-
                     enemyHit = true;
                 }
             }
