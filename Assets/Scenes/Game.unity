@@ -308,6 +308,8 @@ GameObject:
   m_Component:
   - component: {fileID: 18728461}
   - component: {fileID: 18728462}
+  - component: {fileID: 18728463}
+  - component: {fileID: 18728464}
   m_Layer: 0
   m_Name: Rune 3-3
   m_TagString: Untagged
@@ -371,7 +373,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -382,6 +384,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &18728463
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18728460}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.16426086, y: -1.2228532}
+  serializedVersion: 2
+  m_Radius: 2.181656
+--- !u!114 &18728464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18728460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1001 &39396825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -606,6 +661,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      propertyPath: m_Name
+      value: door2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
@@ -621,7 +680,10 @@ PrefabInstance:
     - {fileID: 3620247418371084617, guid: 89980f71633736e4580998faebc0259f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1519285971}
   m_SourcePrefab: {fileID: 100100000, guid: 89980f71633736e4580998faebc0259f, type: 3}
 --- !u!4 &117286921 stripped
 Transform:
@@ -677,6 +739,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      propertyPath: m_Name
+      value: door4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
@@ -692,7 +758,10 @@ PrefabInstance:
     - {fileID: 3620247418371084617, guid: 89980f71633736e4580998faebc0259f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1719903513}
   m_SourcePrefab: {fileID: 100100000, guid: 89980f71633736e4580998faebc0259f, type: 3}
 --- !u!4 &117561342 stripped
 Transform:
@@ -782,9 +851,29 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4030483037442024031, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      propertyPath: m_Name
+      value: door1
+      objectReference: {fileID: 0}
     - target: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361807992921205861, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505243377159729481, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505243377159729481, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1232508913
       objectReference: {fileID: 0}
     - target: {fileID: 8144924426533432545, guid: 89980f71633736e4580998faebc0259f, type: 3}
       propertyPath: m_Name
@@ -792,13 +881,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8144924426533432545, guid: 89980f71633736e4580998faebc0259f, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144924426533432545, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3620247418371084617, guid: 89980f71633736e4580998faebc0259f, type: 3}
+    - {fileID: 4030483037442024031, guid: 89980f71633736e4580998faebc0259f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1868513992}
+    - targetCorrespondingSourceObject: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1868513993}
   m_SourcePrefab: {fileID: 100100000, guid: 89980f71633736e4580998faebc0259f, type: 3}
 --- !u!4 &170304651 stripped
 Transform:
@@ -2185,6 +2285,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      propertyPath: m_Name
+      value: door3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
@@ -2200,7 +2304,10 @@ PrefabInstance:
     - {fileID: 3620247418371084617, guid: 89980f71633736e4580998faebc0259f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1762471053}
   m_SourcePrefab: {fileID: 100100000, guid: 89980f71633736e4580998faebc0259f, type: 3}
 --- !u!4 &424954181 stripped
 Transform:
@@ -2453,6 +2560,8 @@ GameObject:
   m_Component:
   - component: {fileID: 539387351}
   - component: {fileID: 539387352}
+  - component: {fileID: 539387353}
+  - component: {fileID: 539387354}
   m_Layer: 0
   m_Name: Rune 4-3
   m_TagString: Untagged
@@ -2469,7 +2578,7 @@ Transform:
   m_GameObject: {fileID: 539387350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 254.6, y: -2, z: 3.4895003}
+  m_LocalPosition: {x: 266.63, y: -1.03, z: 3.4895003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2516,7 +2625,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2527,6 +2636,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &539387353
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539387350}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.11218262, y: -0.64301896}
+  serializedVersion: 2
+  m_Radius: 1.9248657
+--- !u!114 &539387354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539387350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1 &555902858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,6 +2855,8 @@ GameObject:
   m_Component:
   - component: {fileID: 559299459}
   - component: {fileID: 559299460}
+  - component: {fileID: 559299461}
+  - component: {fileID: 559299462}
   m_Layer: 0
   m_Name: Rune 3-2
   m_TagString: Untagged
@@ -2756,7 +2920,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2767,6 +2931,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &559299461
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559299458}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04735565, y: -1.3416405}
+  serializedVersion: 2
+  m_Radius: 2.5613327
+--- !u!114 &559299462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559299458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1001 &561620861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2861,6 +3078,8 @@ GameObject:
   m_Component:
   - component: {fileID: 572343599}
   - component: {fileID: 572343600}
+  - component: {fileID: 572343601}
+  - component: {fileID: 572343602}
   m_Layer: 0
   m_Name: Rune 2-1
   m_TagString: Untagged
@@ -2924,7 +3143,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2935,6 +3154,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &572343601
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572343598}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.08987045, y: -0.91365457}
+  serializedVersion: 2
+  m_Radius: 1.9526024
+--- !u!114 &572343602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572343598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1001 &577678509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22875,7 +23147,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3a2353389f05d474fa83f88866085f7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -22900,6 +23172,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerPlayer: Player
   activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!58 &948613876
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -23466,6 +23742,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1058008437}
   - component: {fileID: 1058008438}
+  - component: {fileID: 1058008439}
+  - component: {fileID: 1058008440}
   m_Layer: 0
   m_Name: Rune 3-1
   m_TagString: Untagged
@@ -23529,7 +23807,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -23540,6 +23818,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1058008439
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058008436}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.038002014, y: -1.3172531}
+  serializedVersion: 2
+  m_Radius: 2.7138596
+--- !u!114 &1058008440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058008436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1001 &1061819483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25145,6 +25476,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1453248188}
   - component: {fileID: 1453248189}
+  - component: {fileID: 1453248190}
+  - component: {fileID: 1453248191}
   m_Layer: 0
   m_Name: Rune 4-2
   m_TagString: Untagged
@@ -25208,7 +25541,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25219,6 +25552,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1453248190
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453248187}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.039474487, y: -0.9211626}
+  serializedVersion: 2
+  m_Radius: 2.2281036
+--- !u!114 &1453248191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453248187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1001 &1472346877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25435,6 +25821,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1508146666}
   - component: {fileID: 1508146667}
+  - component: {fileID: 1508146668}
+  - component: {fileID: 1508146669}
   m_Layer: 0
   m_Name: Rune 1-3
   m_TagString: Untagged
@@ -25498,7 +25886,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25509,6 +25897,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1508146668
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508146665}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.082915306, y: -0.64554644}
+  serializedVersion: 2
+  m_Radius: 1.4630308
+--- !u!114 &1508146669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508146665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1 &1517092809
 GameObject:
   m_ObjectHideFlags: 0
@@ -25540,6 +25981,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1107839279}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1519285966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+  m_PrefabInstance: {fileID: 117286920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1519285971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519285966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213746773ced8374e86895a5c0d4e5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Runes: {fileID: 0}
 --- !u!1001 &1540251513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25729,6 +26188,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1656315969}
   - component: {fileID: 1656315970}
+  - component: {fileID: 1656315971}
+  - component: {fileID: 1656315972}
   m_Layer: 0
   m_Name: Rune 2-2
   m_TagString: Untagged
@@ -25745,7 +26206,7 @@ Transform:
   m_GameObject: {fileID: 1656315968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.7, y: 14.71, z: 3.4895003}
+  m_LocalPosition: {x: 84.02, y: -4.49, z: 3.4895003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25792,7 +26253,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25803,6 +26264,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1656315971
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656315968}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08057785, y: -0.16162086}
+  serializedVersion: 2
+  m_Radius: 1.9549294
+--- !u!114 &1656315972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656315968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1001 &1666056659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26006,6 +26520,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 5f8fddcd9622bc045acf2e8e79e3adfa, type: 3}
   m_PrefabInstance: {fileID: 1694490067}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1719903508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+  m_PrefabInstance: {fileID: 117561341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1719903513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719903508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213746773ced8374e86895a5c0d4e5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Runes: {fileID: 0}
 --- !u!70 &1737698192
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -26371,6 +26903,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1762471048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+  m_PrefabInstance: {fileID: 424954180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1762471053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762471048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213746773ced8374e86895a5c0d4e5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Runes: {fileID: 0}
 --- !u!1 &1771159664
 GameObject:
   m_ObjectHideFlags: 3
@@ -26727,6 +27277,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -8435245712485981826, guid: d053b7191d4e2524192ad3a196b95691, type: 3}
+--- !u!1 &1868513987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4236446311449736901, guid: 89980f71633736e4580998faebc0259f, type: 3}
+  m_PrefabInstance: {fileID: 170304650}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1868513992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868513987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213746773ced8374e86895a5c0d4e5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Runes: {fileID: 0}
+--- !u!50 &1868513993
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868513987}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1878079364
 GameObject:
   m_ObjectHideFlags: 0
@@ -26924,6 +27519,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1895214582}
   - component: {fileID: 1895214583}
+  - component: {fileID: 1895214584}
+  - component: {fileID: 1895214585}
   m_Layer: 0
   m_Name: Rune 1-2
   m_TagString: Untagged
@@ -26987,7 +27584,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26998,6 +27595,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1895214584
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895214581}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037549973, y: -0.6007848}
+  serializedVersion: 2
+  m_Radius: 1.9846745
+--- !u!114 &1895214585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895214581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1 &1914949549
 GameObject:
   m_ObjectHideFlags: 0
@@ -27008,6 +27658,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1914949550}
   - component: {fileID: 1914949551}
+  - component: {fileID: 1914949552}
+  - component: {fileID: 1914949553}
   m_Layer: 0
   m_Name: Rune 2-3
   m_TagString: Untagged
@@ -27071,7 +27723,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27082,6 +27734,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1914949552
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914949549}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.22070694, y: -0.84270096}
+  serializedVersion: 2
+  m_Radius: 1.8850212
+--- !u!114 &1914949553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914949549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1 &1941316266
 GameObject:
   m_ObjectHideFlags: 0
@@ -141185,6 +141890,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1949125978}
   - component: {fileID: 1949125979}
+  - component: {fileID: 1949125980}
+  - component: {fileID: 1949125981}
   m_Layer: 0
   m_Name: Rune 4-1
   m_TagString: Untagged
@@ -141248,7 +141955,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfb97132963d41242904b6474435a13a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -141259,6 +141966,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1949125980
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949125977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14374542, y: -1.1630783}
+  serializedVersion: 2
+  m_Radius: 2.2802353
+--- !u!114 &1949125981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949125977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c5f6463b3cb34e8d5e553a297f4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayer: Player
+  activationButton: 101
+  door1IsOpen: 0
+  door2IsOpen: 0
+  door3IsOpen: 0
+  door4IsOpen: 0
 --- !u!1001 &1976046934
 PrefabInstance:
   m_ObjectHideFlags: 0

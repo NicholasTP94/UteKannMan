@@ -5,16 +5,25 @@ using UnityEngine;
 
 public class Runes : MonoBehaviour
 {
-    SpriteRenderer thisSpriteRenderer;
-    CircleCollider2D thisCircleCollider;
+    //SpriteRenderer thisSpriteRenderer;
+    //CircleCollider2D thisCircleCollider;
     public string triggerPlayer = "Player";
     public KeyCode activationButton = KeyCode.E;
     private bool insideCollider = false;
+    public bool door1IsOpen = false;
+    public bool door2IsOpen = false;
+    public bool door3IsOpen = false;
+    public bool door4IsOpen = false;
+    int numberOfRunes;
+    int openDoor1 = 3;
+    int openDoor2 = 6;
+    int openDoor3 = 9;
+    int openDoor4 = 12;
 
 
     void Start()
     {
-        thisSpriteRenderer = GetComponent<SpriteRenderer>();
+        //thisSpriteRenderer = GetComponent<SpriteRenderer>();
        
     }
 
@@ -24,7 +33,8 @@ public class Runes : MonoBehaviour
         {
             if (insideCollider)
             {
-                gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("T_BirchTwig_Lit", typeof(Sprite)) as Sprite;
+                gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("T_Harvest_Lit", typeof(Sprite)) as Sprite;
+                numberOfRunes++;
             }
         }
     }
@@ -35,5 +45,28 @@ public class Runes : MonoBehaviour
             insideCollider = true;
         }
 
+    }
+
+    void OpenDoor()
+    {
+        if (numberOfRunes == openDoor1)
+        {
+            door1IsOpen=true;
+        }
+
+        if (numberOfRunes == openDoor2)
+        {
+            door2IsOpen=true;
+        }
+
+        if(numberOfRunes == openDoor3)
+        {
+            door3IsOpen=true;
+        }
+
+        if (numberOfRunes == openDoor4)
+        {
+            door4IsOpen = true;
+        }
     }
 }
