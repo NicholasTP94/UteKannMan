@@ -11,6 +11,7 @@ public class Enemy_Ghoul : MonoBehaviour
 
     // Ghoul_Heralth
     [Range(0, 60)] public float health = 60;
+    float lastHealth = 60;
     bool isAlive = true;
 
     bool attackingPlayer = false;
