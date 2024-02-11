@@ -20,10 +20,12 @@ public class PlayerController2D : MonoBehaviour
     public GameObject attackPointLeftHeavy;
     public GameObject attackPointRightHeavy;
 
-    public float health = 100;
+    public float health;
     public float maxHealth = 100f;
 
     [SerializeField] Image healthDisplay;
+    public HealthBar healthBar;
+    
 
     float inpHor;
     float directionX;
@@ -68,6 +70,7 @@ public class PlayerController2D : MonoBehaviour
         thisRigidbody2D = GetComponent<Rigidbody2D>();
         thisAnimator = GetComponent<Animator>();
         thisCircleCollider2D = GetComponent<CircleCollider2D>();
+        //UpdateHealthBar();
     }
 
     void Update()
@@ -131,7 +134,13 @@ public class PlayerController2D : MonoBehaviour
             attackPoint.transform.position = attackPointRight.transform.position;
             attackPointHeavy.transform.position = attackPointRightHeavy.transform.position;
         }
-        thisAnimator.SetFloat("yVelocity", thisRigidbody2D.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            thisAnimator.SetTrigger("Sunshine");
+        }
+
+            thisAnimator.SetFloat("yVelocity", thisRigidbody2D.velocity.y);
         thisAnimator.SetFloat("Speed", Mathf.Abs(inpHor));
         thisAnimator.SetBool("isGrounded", isGrounded);
     }
@@ -161,7 +170,7 @@ public class PlayerController2D : MonoBehaviour
     {
         if (lastLightAttackTimestamp == 0 || (Time.time - lastLightAttackTimestamp >= lightAttackCooldown))
         {
-            Debug.Log("Quick Slash!");
+            Debug.Log("Quick Slash!!");
             thisAnimator.SetTrigger("Attack");
 
             AudioManager.instance.PlayOneShot(FMODEvents.instance.lightAttack, this.transform.position);
@@ -270,7 +279,16 @@ public class PlayerController2D : MonoBehaviour
         if (Time.time > lastHit + 0.1f)
         {
             health -= _damage;
+            
             lastHit = Time.time;
+
+            //UpdateHealthBar();
         }
     }
+
+    //private void UpdateHealthBar()
+    //{
+    //    healthBar.UpdateHealth();
+    //}
+
 }
