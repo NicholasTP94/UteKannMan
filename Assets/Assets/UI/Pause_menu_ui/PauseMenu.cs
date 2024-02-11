@@ -9,6 +9,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI; // Assign in Inspector
     public bool isGamePaused = false;
 
+    void Start()
+    {
+        pauseMenuUI.SetActive(false);
+    }
     void Update()
     {
         // Check if the pause button was pressed

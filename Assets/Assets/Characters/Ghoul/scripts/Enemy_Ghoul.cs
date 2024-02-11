@@ -8,14 +8,18 @@ public class Enemy_Ghoul : MonoBehaviour
     Rigidbody2D thisRigidbody2D;
     Animator thisAnimator;
     BoxCollider2D thisCollider2D;
+    PlayerController2D thisPlayerController2D;
 
     // Ghoul_Heralth
     [Range(0, 60)] public float health = 60;
+    public float lastHealth;
     bool isAlive = true;
 
     bool attackingPlayer = false;
 
-    float damage;
+    public float animationDelay;
+
+    float damage = 20;
 
     float directionX = 1;
 
@@ -59,28 +63,30 @@ public class Enemy_Ghoul : MonoBehaviour
         startPosition = transform.position;
         endPosition = transform.position + Vector3.right * patrolDistance;
 
+        lastHealth = health;
+
         enemyState = EnemyState.Patrol;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(player.GetComponent<PlayerController2D>().enemyHit);
-        distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        #region RAYCASTS
+        //distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (Vector2.Distance(transform.position, player.transform.position) <= attackRange)
-        {
-            Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
-        }
-        else if (Vector2.Distance(transform.position, player.transform.position) <= chaseDistance)
-        {
-            Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.magenta);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
-        }
-
+        //if (Vector2.Distance(transform.position, player.transform.position) <= attackRange)
+        //{
+        //    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
+        //}
+        //else if (Vector2.Distance(transform.position, player.transform.position) <= chaseDistance)
+        //{
+        //    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.magenta);
+        //}
+        //else
+        //{
+        //    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
+        //}
+        #endregion
 
         if (isAlive)
         {
@@ -109,20 +115,30 @@ public class Enemy_Ghoul : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+
+        if (isAlive)
+        {
+            thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
+        }
+    }
+
     void Logic()
     {
+
         if (health <= 0)
         {
             enemyState = EnemyState.Dead;
             return;
         }
-        else if (player.GetComponent<PlayerController2D>().enemyHit)
+        else if (lastHealth > health)
         {
             enemyState = EnemyState.Hit;
-            player.GetComponent<PlayerController2D>().enemyHit = false;
+            lastHealth = health;
             return;
         }
-        
+
 
         if (player != null)
         {
@@ -142,8 +158,44 @@ public class Enemy_Ghoul : MonoBehaviour
             }
         }
     }
+
     #region StateMethods
 
+    public void LookAtRightDirection()
+    {
+        // Determine direction to player
+        if (transform.position.x > player.position.x)
+        {
+            directionX = -1;
+        }
+        else if (transform.position.x < player.position.x)
+        {
+            directionX = 1;
+        }
+
+        // Make sure we look at player
+        if (directionX < 0) thisSpriteRenderer.flipX = true;
+        else if (directionX > 0) thisSpriteRenderer.flipX = false;
+    }
+
+    //Takes Damage from player
+    public void TakeDamage(float _damage)
+    {
+        if (Time.time > lastHit + 0.1f)
+        {
+            health -= _damage;
+            lastHit = Time.time;
+        }
+    }
+    //Creates animation delay
+    IEnumerator PlayAnimationWithDelay(string animationTrigger, float delay)
+    {
+        // Add a delay before playing the specified animation
+        yield return new WaitForSeconds(delay);
+
+        // Trigger the specified animation
+        thisAnimator.SetTrigger(animationTrigger);
+    }
     void Patrol()
     {
         attackingPlayer = false;
@@ -163,33 +215,19 @@ public class Enemy_Ghoul : MonoBehaviour
                 directionX = 1;
             }
         }
-
         if (directionX < 0) thisSpriteRenderer.flipX = true;
         else if (directionX > 0) thisSpriteRenderer.flipX = false;
 
         thisAnimator.SetFloat("GhoulSpeed", Mathf.Abs(directionX));
     }
-
-    //Takes Damage from player
-    public void TakeDamage(float _damage) 
-    {
-        if (Time.time > lastHit + 0.1f)
-        {
-            health -= _damage;
-            lastHit = Time.time;
-        }
-    }
-
     // Plays the hit animation
     public void Hit()
     {
-        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
         attackingPlayer = false;
+        animationDelay = 0.4f;
         directionX = 0;
-
-        if (!isAnimationState("GhoulHit"))
-            Debug.Log("Im playing hit animation");
-            thisAnimator.SetTrigger("GhoulHit");
+        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
+        StartCoroutine(PlayAnimationWithDelay("GhoulHit", animationDelay));
     }
 
     void Chase()
@@ -197,14 +235,7 @@ public class Enemy_Ghoul : MonoBehaviour
         attackingPlayer = false;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
 
-        if (transform.position.x > player.position.x)
-        {
-            directionX = -1;
-        }
-        else if (transform.position.x < player.position.x)
-        {
-            directionX = 1;
-        }
+        LookAtRightDirection();
 
         // To fix twitching when alignd on X axis but not on Y
         float distX = transform.position.x - player.position.x;
@@ -214,8 +245,6 @@ public class Enemy_Ghoul : MonoBehaviour
             directionX = 0;
         }
 
-        if (directionX < 0) thisSpriteRenderer.flipX = true;
-        else if (directionX > 0) thisSpriteRenderer.flipX = false;
     }
 
     void Attack()
@@ -223,84 +252,25 @@ public class Enemy_Ghoul : MonoBehaviour
         attackingPlayer = true;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
 
-        // Determine direction to player
-        if (transform.position.x > player.position.x)
-        {
-            directionX = -1;
-        }
-        else if (transform.position.x < player.position.x)
-        {
-            directionX = 1;
-        }
-
-        // Make sure we look at player
-        if (directionX < 0) thisSpriteRenderer.flipX = true;
-        else if (directionX > 0) thisSpriteRenderer.flipX = false;
-
-        // Enemy won't move
-        directionX = 0;
-
-        //Stop the animation of Motion state
-        thisAnimator.SetFloat("GhoulSpeed", 0);
+        LookAtRightDirection();
 
         if (Time.time >= lastAttack)
         {
-            thisAnimator.SetTrigger("GhoulAttack");
+            StartCoroutine(PlayAnimationWithDelay("GhoulAttack", animationDelay));
             lastAttack = Time.time + attackDelay;
-            player.GetComponent<PlayerController2D>().Damage(20);
+            player.GetComponent<PlayerController2D>().Damage(damage);
         }
     }
 
     void Dead()
     {
         attackingPlayer = false;
-        directionX = 0;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
-        // Will only run once
-        //thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, 5);
-        thisAnimator.SetTrigger("GhoulDeath");
-        //thisCollider2D.isTrigger = true;
+        directionX = 0;
+        animationDelay = 0.4f;
+        StartCoroutine(PlayAnimationWithDelay("GhoulDeath", animationDelay));
         Destroy(gameObject, 1.2f);
         return;
     }
     #endregion
-
-    private void FixedUpdate()
-    {
-
-        if (isAlive)
-        {
-            thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            // So the enemy can't see us from above
-            if (collision.transform.position.y >= transform.position.y - 0.1f)
-            {
-                player = collision.transform;
-            }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            // So the enemy can't see us from above
-            if (collision.transform.position.y >= transform.position.y - 0.1f)
-            {
-                player = collision.transform;
-            }
-        }
-    }
-    bool isAnimationState(string stateName)
-    {
-        if (thisAnimator.GetCurrentAnimatorStateInfo(0).IsName(stateName))
-        { return true; }
-        else return false;
-    }
 }
