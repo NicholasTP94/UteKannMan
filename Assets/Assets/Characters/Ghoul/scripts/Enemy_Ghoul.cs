@@ -183,9 +183,9 @@ public class Enemy_Ghoul : MonoBehaviour
     // Plays the hit animation
     public void Hit()
     {
+        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
         attackingPlayer = false;
         directionX = 0;
-        thisAnimator.SetBool("attackingPlayer", attackingPlayer);
 
         if (!isAnimationState("GhoulHit"))
             thisAnimator.SetTrigger("GhoulHit");
