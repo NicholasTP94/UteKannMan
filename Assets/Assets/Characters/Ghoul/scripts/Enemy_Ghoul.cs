@@ -188,6 +188,7 @@ public class Enemy_Ghoul : MonoBehaviour
         directionX = 0;
 
         if (!isAnimationState("GhoulHit"))
+            Debug.Log("Im playing hit animation");
             thisAnimator.SetTrigger("GhoulHit");
     }
 

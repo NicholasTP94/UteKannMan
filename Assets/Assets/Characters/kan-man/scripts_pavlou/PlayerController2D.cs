@@ -86,6 +86,7 @@ public class PlayerController2D : MonoBehaviour
         {
             if (!heavyAttacked)
             {
+                
                 LightAttack();
             }
             heavyAttacked = false;
