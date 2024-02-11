@@ -19,10 +19,6 @@ public class Enemy_Boss : MonoBehaviour
 
     float directionX = 1;
 
-    public Vector3 startPosition;
-    public Vector3 endPosition;
-
-    public float patrolDistance = 3;
 
     // Enemy States
     public enum EnemyState
@@ -58,9 +54,6 @@ public class Enemy_Boss : MonoBehaviour
         thisCollider2D = GetComponent<BoxCollider2D>();
 
         Physics2D.IgnoreLayerCollision(3, 8);
-
-        startPosition = transform.position;
-        endPosition = transform.position + Vector3.right * patrolDistance;
 
         enemyState = EnemyState.Idle;
     }
