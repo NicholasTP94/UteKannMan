@@ -2,9 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject mainMenuPanel;
+    public GameObject controlsMenuPanel;
+
+    private void Start()
+    {
+        mainMenuPanel.SetActive(true);
+        controlsMenuPanel.SetActive(false);
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene("Game");
@@ -16,10 +25,12 @@ public class MainMenu : MonoBehaviour
     }
     public void Controls()
     {
-        SceneManager.LoadScene("Controls");
+        mainMenuPanel.SetActive(false);
+        controlsMenuPanel.SetActive(true);
     }
     public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        controlsMenuPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
 }
