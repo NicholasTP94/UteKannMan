@@ -7,13 +7,14 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerController2D : MonoBehaviour
 {
+    public GameObject youDiedPanel;
     SpriteRenderer thisSpriteRenderer;
     Rigidbody2D thisRigidbody2D;
     Animator thisAnimator;
     CircleCollider2D thisCircleCollider2D;
 
     private EventInstance playerFootsteps;
-    
+
     public GameObject attackPointLeft;
     public GameObject attackPointRight;
 
@@ -64,8 +65,10 @@ public class PlayerController2D : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         health = maxHealth;
         playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
+        youDiedPanel.SetActive(false);
         thisSpriteRenderer = GetComponent<SpriteRenderer>();
         thisRigidbody2D = GetComponent<Rigidbody2D>();
         thisAnimator = GetComponent<Animator>();
@@ -253,9 +256,15 @@ public class PlayerController2D : MonoBehaviour
         {
 
             thisAnimator.SetTrigger("Dead");
+            Invoke("ActivateDeathPanel", 2);
             return true;
         }
         else return false;
+    }
+    void ActivateDeathPanel()
+    {
+        youDiedPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
     private void UpdateSound()
     {
