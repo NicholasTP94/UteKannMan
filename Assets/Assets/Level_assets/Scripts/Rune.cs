@@ -38,7 +38,7 @@ public class Runes : MonoBehaviour
 
             numberOfRunes++;
 
-            Debug.Log("You have" + numberOfRunes);
+            Debug.Log("Why does it fucking stack!!" + numberOfRunes);
 
             thisCircleCollider.enabled = false;
             insideCollider = false;

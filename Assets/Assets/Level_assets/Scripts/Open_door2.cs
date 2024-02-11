@@ -11,6 +11,7 @@ public class Open_door2 : MonoBehaviour
     void Start()
     {
         thisAnimator = GetComponent<Animator>();
+        
 
         thisBoxCollider2D = GetComponent<BoxCollider2D>();
         GetComponent<Runes>();
@@ -22,6 +23,7 @@ public class Open_door2 : MonoBehaviour
         if (Runes.numberOfRunes == 6)
         {
             thisBoxCollider2D.enabled = false;
+            thisAnimator.SetTrigger("DoorOpens");
         }
     }
 }

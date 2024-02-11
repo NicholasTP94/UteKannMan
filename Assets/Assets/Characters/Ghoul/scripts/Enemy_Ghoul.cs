@@ -56,8 +56,6 @@ public class Enemy_Ghoul : MonoBehaviour
         thisAnimator = GetComponent<Animator>();
         thisCollider2D = GetComponent<BoxCollider2D>();
 
-        //thisAnimator.SetBool("isGrounded", true);
-
         startPosition = transform.position;
         endPosition = transform.position + Vector3.right * patrolDistance;
 

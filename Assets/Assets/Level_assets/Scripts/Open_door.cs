@@ -7,11 +7,14 @@ public class Open_door : MonoBehaviour
 {
     Animator thisAnimator;
     BoxCollider2D thisBoxCollider2D;
+
     
+
 
     void Start()
     {
         thisAnimator = GetComponent<Animator>();
+        //thisAnimator.enabled = false;
 
         thisBoxCollider2D = GetComponent<BoxCollider2D>();
         GetComponent<Runes>();
@@ -22,7 +25,9 @@ public class Open_door : MonoBehaviour
     {
         if (Runes.numberOfRunes == 3)
         {
+            thisAnimator.SetTrigger("DoorOpens");
             thisBoxCollider2D.enabled = false;
+            
         }
     }
 
