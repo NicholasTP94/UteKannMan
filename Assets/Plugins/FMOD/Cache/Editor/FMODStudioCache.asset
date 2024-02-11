@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8708143221008555652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ambience/MenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ambience/MenuMusic
+  Guid:
+    Data1: 1010168438
+    Data2: 1196902065
+    Data3: 466690955
+    Data4: -1656908977
+  Banks:
+  - {fileID: 546236922133864096}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 138000
 --- !u!114 &-7797496162982634686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +42,30 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638432081438890538
+  lastModified: 638432931933205896
   FileSizes:
   - Name: Desktop
-    Value: 1158
+    Value: 1504
+  Exists: 1
+--- !u!114 &-7043617513293674639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Level1Bank.streams.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.streams.bank
+  Name: Level1Bank.streams
+  StudioPath: bank:/Level1Bank.streams
+  lastModified: 638432931933080786
+  FileSizes:
+  - Name: Desktop
+    Value: 2830656
   Exists: 1
 --- !u!114 &-6066619923924049842
 MonoBehaviour:
@@ -62,7 +109,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638432081438890538
+  lastModified: 638432931933155843
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -165,6 +212,12 @@ MonoBehaviour:
   - {fileID: 546236922133864096}
   - {fileID: -5493160485279772541}
   - {fileID: 6101829983760950861}
+  - {fileID: 6362836940875992565}
+  - {fileID: -7043617513293674639}
+  - {fileID: 2229112828904990589}
+  - {fileID: 8987540424791834210}
+  - {fileID: 5492621542643442876}
+  - {fileID: 8410930716929670079}
   EditorEvents:
   - {fileID: 5977600382651349407}
   - {fileID: 4126171263081151830}
@@ -173,12 +226,13 @@ MonoBehaviour:
   - {fileID: -1256748817344062828}
   - {fileID: -4676254391172864911}
   - {fileID: 6287523058283627160}
+  - {fileID: -8708143221008555652}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5493160485279772541}
   StringsBanks:
   - {fileID: -7797496162982634686}
-  cacheTime: 638432081438970557
+  cacheTime: 638432931933661285
   cacheVersion: 131616
 --- !u!114 &546236922133864096
 MonoBehaviour:
@@ -195,10 +249,30 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.bank
   Name: Level1Bank
   StudioPath: bank:/Level1Bank
-  lastModified: 638432081438890538
+  lastModified: 638432931932835573
   FileSizes:
   - Name: Desktop
-    Value: 1090368
+    Value: 2916
+  Exists: 1
+--- !u!114 &2229112828904990589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.assets.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.assets.bank
+  Name: Master.assets
+  StudioPath: bank:/Master.assets
+  lastModified: 638432931933170858
+  FileSizes:
+  - Name: Desktop
+    Value: 494
   Exists: 1
 --- !u!114 &4126171263081151830
 MonoBehaviour:
@@ -227,6 +301,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5492621542643442876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.assets.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.assets.bank
+  Name: SFX.assets
+  StudioPath: bank:/SFX.assets
+  lastModified: 638432931933481124
+  FileSizes:
+  - Name: Desktop
+    Value: 194528
+  Exists: 1
 --- !u!114 &5977600382651349407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,10 +363,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638432081438970557
+  lastModified: 638432931933310979
   FileSizes:
   - Name: Desktop
-    Value: 1472384
+    Value: 9908
   Exists: 1
 --- !u!114 &6287523058283627160
 MonoBehaviour:
@@ -301,3 +395,63 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 83496
+--- !u!114 &6362836940875992565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Level1Bank.assets.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.assets.bank
+  Name: Level1Bank.assets
+  StudioPath: bank:/Level1Bank.assets
+  lastModified: 638432931932860594
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &8410930716929670079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.streams.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.streams.bank
+  Name: SFX.streams
+  StudioPath: bank:/SFX.streams
+  lastModified: 638432931933661285
+  FileSizes:
+  - Name: Desktop
+    Value: 1269056
+  Exists: 1
+--- !u!114 &8987540424791834210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.streams.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.streams.bank
+  Name: Master.streams
+  StudioPath: bank:/Master.streams
+  lastModified: 638432931933190883
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
