@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.streams.bank
   Name: Level1Bank.streams
   StudioPath: bank:/Level1Bank.streams
-  lastModified: 638432931933080786
+  lastModified: 638432938268825809
   FileSizes:
   - Name: Desktop
     Value: 2830656
@@ -232,7 +232,7 @@ MonoBehaviour:
   - {fileID: -5493160485279772541}
   StringsBanks:
   - {fileID: -7797496162982634686}
-  cacheTime: 638432931933661285
+  cacheTime: 638432947593550746
   cacheVersion: 131616
 --- !u!114 &546236922133864096
 MonoBehaviour:
@@ -249,7 +249,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.bank
   Name: Level1Bank
   StudioPath: bank:/Level1Bank
-  lastModified: 638432931932835573
+  lastModified: 638432938244710083
   FileSizes:
   - Name: Desktop
     Value: 2916
@@ -316,10 +316,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.assets.bank
   Name: SFX.assets
   StudioPath: bank:/SFX.assets
-  lastModified: 638432931933481124
+  lastModified: 638432947593375592
   FileSizes:
   - Name: Desktop
-    Value: 194528
+    Value: 211648
   Exists: 1
 --- !u!114 &5977600382651349407
 MonoBehaviour:
@@ -363,10 +363,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638432931933310979
+  lastModified: 638432947592960236
   FileSizes:
   - Name: Desktop
-    Value: 9908
+    Value: 10882
   Exists: 1
 --- !u!114 &6287523058283627160
 MonoBehaviour:
@@ -410,7 +410,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.assets.bank
   Name: Level1Bank.assets
   StudioPath: bank:/Level1Bank.assets
-  lastModified: 638432931932860594
+  lastModified: 638432938244730097
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -430,7 +430,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.streams.bank
   Name: SFX.streams
   StudioPath: bank:/SFX.streams
-  lastModified: 638432931933661285
+  lastModified: 638432947593550746
   FileSizes:
   - Name: Desktop
     Value: 1269056

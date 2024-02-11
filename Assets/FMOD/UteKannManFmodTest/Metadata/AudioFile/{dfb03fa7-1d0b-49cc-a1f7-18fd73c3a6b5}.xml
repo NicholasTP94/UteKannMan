@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{dfb03fa7-1d0b-49cc-a1f7-18fd73c3a6b5}">
 		<property name="assetPath">
-			<value>sword-swipes-7174.mp3</value>
+			<value>Player/sword-swipes-7174.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>24</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{8336e373-1128-4901-9514-42653a2b8212}">
 		<property name="builtBanksOutputDirectory">
-			<value>../../GitHub/UteKannMan/Assets/FMOD/Desktop</value>
+			<value>Build</value>
 		</property>
 		<property name="builtBanksSeparateAssets">
 			<value>true</value>

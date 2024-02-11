@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{efdfc57a-bb1f-445e-8438-ad225c353257}">
 		<property name="assetPath">
-			<value>clean-fast-swooshaiff-14784.mp3</value>
+			<value>Player/clean-fast-swooshaiff-14784.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>24</value>
