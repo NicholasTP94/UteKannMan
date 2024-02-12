@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638432949371228526
+  lastModified: 638433076495170256
   FileSizes:
   - Name: Desktop
-    Value: 1504
+    Value: 1662
   Exists: 1
 --- !u!114 &-7043617513293674639
 MonoBehaviour:
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.streams.bank
   Name: Level1Bank.streams
   StudioPath: bank:/Level1Bank.streams
-  lastModified: 638432949370134092
+  lastModified: 638433014124657065
   FileSizes:
   - Name: Desktop
     Value: 2830656
@@ -94,6 +94,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5565540826890405160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/GhoulGetsHit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/GhoulGetsHit
+  Guid:
+    Data1: -1624781605
+    Data2: 1266221931
+    Data3: -1404449891
+    Data4: -633643676
+  Banks:
+  - {fileID: 6101829983760950861}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5493160485279772541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +136,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638432181711612479
+  lastModified: 638433076495115203
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -227,12 +254,15 @@ MonoBehaviour:
   - {fileID: -4676254391172864911}
   - {fileID: 6287523058283627160}
   - {fileID: -8708143221008555652}
+  - {fileID: 3849631316242079381}
+  - {fileID: -5565540826890405160}
+  - {fileID: 9077233407292254864}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5493160485279772541}
   StringsBanks:
   - {fileID: -7797496162982634686}
-  cacheTime: 638432949371673939
+  cacheTime: 638433076584251815
   cacheVersion: 131616
 --- !u!114 &546236922133864096
 MonoBehaviour:
@@ -249,7 +279,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.bank
   Name: Level1Bank
   StudioPath: bank:/Level1Bank
-  lastModified: 638432949369764200
+  lastModified: 638433014124411856
   FileSizes:
   - Name: Desktop
     Value: 2916
@@ -269,11 +299,38 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.assets.bank
   Name: Master.assets
   StudioPath: bank:/Master.assets
-  lastModified: 638432949370484318
+  lastModified: 638433076495130225
   FileSizes:
   - Name: Desktop
     Value: 494
   Exists: 1
+--- !u!114 &3849631316242079381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Objects/Rune
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Objects/Rune
+  Guid:
+    Data1: 513371208
+    Data2: 1169606852
+    Data3: 98740413
+    Data4: 1817707823
+  Banks:
+  - {fileID: 6101829983760950861}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4126171263081151830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,10 +373,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.assets.bank
   Name: SFX.assets
   StudioPath: bank:/SFX.assets
-  lastModified: 638432949371273834
+  lastModified: 638433076584081662
   FileSizes:
   - Name: Desktop
-    Value: 211648
+    Value: 309472
   Exists: 1
 --- !u!114 &5977600382651349407
 MonoBehaviour:
@@ -363,10 +420,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638432949371485239
+  lastModified: 638433076583896506
   FileSizes:
   - Name: Desktop
-    Value: 10882
+    Value: 14802
   Exists: 1
 --- !u!114 &6287523058283627160
 MonoBehaviour:
@@ -410,7 +467,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.assets.bank
   Name: Level1Bank.assets
   StudioPath: bank:/Level1Bank.assets
-  lastModified: 638432949369439974
+  lastModified: 638433014124441889
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -430,7 +487,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.streams.bank
   Name: SFX.streams
   StudioPath: bank:/SFX.streams
-  lastModified: 638432949371673939
+  lastModified: 638433076584251815
   FileSizes:
   - Name: Desktop
     Value: 1269056
@@ -450,8 +507,35 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.streams.bank
   Name: Master.streams
   StudioPath: bank:/Master.streams
-  lastModified: 638432949370900935
+  lastModified: 638433076495155235
   FileSizes:
   - Name: Desktop
     Value: 494
   Exists: 1
+--- !u!114 &9077233407292254864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/GhoulAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/GhoulAttack
+  Guid:
+    Data1: 1382865228
+    Data2: 1193162890
+    Data3: -1022340462
+    Data4: 1152889854
+  Banks:
+  - {fileID: 6101829983760950861}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

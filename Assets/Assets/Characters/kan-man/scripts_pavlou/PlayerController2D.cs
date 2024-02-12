@@ -173,9 +173,9 @@ public class PlayerController2D : MonoBehaviour
     {
         if (lastLightAttackTimestamp == 0 || (Time.time - lastLightAttackTimestamp >= lightAttackCooldown))
         {
+            thisAnimator.SetFloat("Speed", 0f);
             Debug.Log("Quick Slash!!");
             thisAnimator.SetTrigger("Attack");
-
             AudioManager.instance.PlayOneShot(FMODEvents.instance.lightAttack, this.transform.position);
 
             Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(1.8f, 1.2f), 0f);
@@ -201,6 +201,7 @@ public class PlayerController2D : MonoBehaviour
     {
         if (lastHeavyAttackTimestamp == 0 || (Time.time - lastHeavyAttackTimestamp >= heavyAttackCooldown))
         {
+            thisAnimator.SetFloat("Speed", 0f);
             heavyAttacked = true;
             attackTriggerTimeStamp = 0;
 
@@ -254,9 +255,9 @@ public class PlayerController2D : MonoBehaviour
     {
         if (health <= 0)
         {
-
+            AudioManager.instance.StopAllAudio();
             thisAnimator.SetTrigger("Dead");
-            Invoke("ActivateDeathPanel", 2);
+            Invoke("ActivateDeathPanel", 1);
             return true;
         }
         else return false;

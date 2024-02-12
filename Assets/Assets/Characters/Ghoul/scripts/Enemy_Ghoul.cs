@@ -183,6 +183,7 @@ public class Enemy_Ghoul : MonoBehaviour
     {
         if (Time.time > lastHit + 0.1f)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.ghouGetsHit, this.transform.position);
             health -= _damage;
             lastHit = Time.time;
         }
@@ -256,6 +257,7 @@ public class Enemy_Ghoul : MonoBehaviour
 
         if (Time.time >= lastAttack)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.ghoulAttacks, this.transform.position);
             StartCoroutine(PlayAnimationWithDelay("GhoulAttack", animationDelay));
             lastAttack = Time.time + attackDelay;
             player.GetComponent<PlayerController2D>().Damage(damage);

@@ -15,6 +15,11 @@ public class MainMenu : MonoBehaviour
         mainMenuPanel.SetActive(true);
         controlsMenuPanel.SetActive(false);
     }
+    public void Controls()
+    {
+        mainMenuPanel.SetActive(false);
+        controlsMenuPanel.SetActive(true);
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene("Game");
@@ -24,11 +29,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Game has stopped.");
         Application.Quit();
     }
-    public void Controls()
-    {
-        mainMenuPanel.SetActive(false);
-        controlsMenuPanel.SetActive(true);
-    }
+    
     public void ReturnToMainMenu()
     {
         controlsMenuPanel.SetActive(false);

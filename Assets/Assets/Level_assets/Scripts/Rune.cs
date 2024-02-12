@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
 
 
 public class Runes : MonoBehaviour
@@ -33,12 +34,10 @@ public class Runes : MonoBehaviour
 
         if (insideCollider && Input.GetKeyDown(activationButton))
         {
-
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.rune, this.transform.position);
             gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("T_Harvest_Lit", typeof(Sprite)) as Sprite;
 
             numberOfRunes++;
-
-            Debug.Log("Why does it fucking stack!!" + numberOfRunes);
 
             thisCircleCollider.enabled = false;
             insideCollider = false;

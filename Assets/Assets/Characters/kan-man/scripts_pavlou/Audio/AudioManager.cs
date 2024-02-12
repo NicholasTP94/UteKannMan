@@ -6,7 +6,7 @@ using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
-    private List<EventInstance> eventsInstaces;
+    private List<EventInstance> eventsInstances;
     private List<StudioEventEmitter> eventEmitters;
 
     private EventInstance ambienceEventInstance;
@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
         }
         instance = this;
 
-        eventsInstaces = new List<EventInstance>();
+        eventsInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
     }
     private void Start()
@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
     public EventInstance CreateEventInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
-        eventsInstaces.Add(eventInstance);
+        eventsInstances.Add(eventInstance);
         return eventInstance;
     }
 
@@ -55,10 +55,28 @@ public class AudioManager : MonoBehaviour
         eventEmitters.Add(emitter);
         return emitter;
     }
-
-    private void CleanUp()
+    public void StopAllAudio()
     {
-        foreach (EventInstance eventInstance in eventsInstaces)
+        foreach (EventInstance eventInstance in eventsInstances)
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            eventInstance.release();
+        }
+        
+        foreach (StudioEventEmitter emitter in eventEmitters)
+        {
+            emitter.Stop();
+        }
+        if (ambienceEventInstance.isValid())
+        {
+            ambienceEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            ambienceEventInstance.release();
+        }
+    }
+
+    public void CleanUp()
+    {
+        foreach (EventInstance eventInstance in eventsInstances)
         {
             eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             eventInstance.release();
@@ -68,7 +86,6 @@ public class AudioManager : MonoBehaviour
             emitter.Stop();
         }
     }
-
     private void OnDestroy()
     {
         CleanUp();
