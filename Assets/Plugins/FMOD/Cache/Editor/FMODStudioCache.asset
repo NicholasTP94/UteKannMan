@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638433076495170256
+  lastModified: 638433786365291883
   FileSizes:
   - Name: Desktop
     Value: 1662
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.streams.bank
   Name: Level1Bank.streams
   StudioPath: bank:/Level1Bank.streams
-  lastModified: 638433014124657065
+  lastModified: 638432949370134092
   FileSizes:
   - Name: Desktop
     Value: 2830656
@@ -136,7 +136,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638433076495115203
+  lastModified: 638432181711612479
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -262,7 +262,7 @@ MonoBehaviour:
   - {fileID: -5493160485279772541}
   StringsBanks:
   - {fileID: -7797496162982634686}
-  cacheTime: 638433076584251815
+  cacheTime: 638433786365507156
   cacheVersion: 131616
 --- !u!114 &546236922133864096
 MonoBehaviour:
@@ -279,7 +279,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.bank
   Name: Level1Bank
   StudioPath: bank:/Level1Bank
-  lastModified: 638433014124411856
+  lastModified: 638433786363678987
   FileSizes:
   - Name: Desktop
     Value: 2916
@@ -299,7 +299,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.assets.bank
   Name: Master.assets
   StudioPath: bank:/Master.assets
-  lastModified: 638433076495130225
+  lastModified: 638432949370484318
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -373,7 +373,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.assets.bank
   Name: SFX.assets
   StudioPath: bank:/SFX.assets
-  lastModified: 638433076584081662
+  lastModified: 638433786365431981
   FileSizes:
   - Name: Desktop
     Value: 309472
@@ -420,7 +420,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638433076583896506
+  lastModified: 638433786365507156
   FileSizes:
   - Name: Desktop
     Value: 14802
@@ -467,7 +467,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.assets.bank
   Name: Level1Bank.assets
   StudioPath: bank:/Level1Bank.assets
-  lastModified: 638433014124441889
+  lastModified: 638432949369439974
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -487,7 +487,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.streams.bank
   Name: SFX.streams
   StudioPath: bank:/SFX.streams
-  lastModified: 638433076584251815
+  lastModified: 638432949371673939
   FileSizes:
   - Name: Desktop
     Value: 1269056
@@ -507,7 +507,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.streams.bank
   Name: Master.streams
   StudioPath: bank:/Master.streams
-  lastModified: 638433076495155235
+  lastModified: 638432949370900935
   FileSizes:
   - Name: Desktop
     Value: 494
