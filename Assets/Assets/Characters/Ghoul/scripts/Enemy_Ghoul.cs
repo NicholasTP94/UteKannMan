@@ -18,6 +18,7 @@ public class Enemy_Ghoul : MonoBehaviour
     bool attackingPlayer = false;
 
     public float animationDelay;
+    public float movementDelayAfterHit = 0.4f;
 
     float damage = 20;
 
@@ -197,6 +198,13 @@ public class Enemy_Ghoul : MonoBehaviour
         // Trigger the specified animation
         thisAnimator.SetTrigger(animationTrigger);
     }
+
+    //Creates movement delay
+    IEnumerator MovementDelay()
+    {
+        yield return new WaitForSeconds(movementDelayAfterHit);
+        directionX = 1; // or any other default value you want after the delay
+    }
     void Patrol()
     {
         attackingPlayer = false;
@@ -229,6 +237,7 @@ public class Enemy_Ghoul : MonoBehaviour
         directionX = 0;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
         StartCoroutine(PlayAnimationWithDelay("GhoulHit", animationDelay));
+        StartCoroutine(MovementDelay());
     }
 
     void Chase()
@@ -251,9 +260,11 @@ public class Enemy_Ghoul : MonoBehaviour
     void Attack()
     {
         attackingPlayer = true;
+        directionX = 0;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
 
         LookAtRightDirection();
+        StartCoroutine(MovementDelay());
 
         if (Time.time >= lastAttack)
         {
@@ -271,6 +282,7 @@ public class Enemy_Ghoul : MonoBehaviour
         directionX = 0;
         animationDelay = 0.05f;
         StartCoroutine(PlayAnimationWithDelay("GhoulDeath", animationDelay));
+        StartCoroutine(MovementDelay());
         Destroy(gameObject, 1.2f);
         return;
     }
