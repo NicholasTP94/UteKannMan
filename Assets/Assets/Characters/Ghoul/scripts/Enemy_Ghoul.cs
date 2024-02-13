@@ -269,7 +269,7 @@ public class Enemy_Ghoul : MonoBehaviour
         attackingPlayer = false;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
         directionX = 0;
-        animationDelay = 0.4f;
+        animationDelay = 0.05f;
         StartCoroutine(PlayAnimationWithDelay("GhoulDeath", animationDelay));
         Destroy(gameObject, 1.2f);
         return;
