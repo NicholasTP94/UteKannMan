@@ -10,12 +10,12 @@ public class Runes : MonoBehaviour
     CircleCollider2D thisCircleCollider;
     BoxCollider2D thisBoxCollider2D;
 
+    Open_door open_Door;
+
 
     public KeyCode activationButton = KeyCode.E;
-    public bool insideCollider = false;
-
-    public static int numberOfRunes = 0;
-    public bool openDoor1 = false;
+    public bool insideCollider;
+    public static int numberOfRunes;
 
 
 
@@ -26,10 +26,12 @@ public class Runes : MonoBehaviour
         thisSpriteRenderer = GetComponent<SpriteRenderer>();
         thisCircleCollider = GetComponent<CircleCollider2D>();
         thisBoxCollider2D = GetComponent<BoxCollider2D>();
+        open_Door = GetComponent<Open_door>();
+        insideCollider = false;
 
     }
 
-    public void Update()
+    void Update()
     {
 
         if (insideCollider && Input.GetKeyDown(activationButton))
@@ -41,13 +43,15 @@ public class Runes : MonoBehaviour
 
             thisCircleCollider.enabled = false;
             insideCollider = false;
-
         }
 
 
-
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.CompareTag("Player"))
@@ -55,6 +59,11 @@ public class Runes : MonoBehaviour
             Debug.Log("Player has entered");
 
             insideCollider = true;
+
+
+
+
+
 
         }
 
@@ -68,6 +77,7 @@ public class Runes : MonoBehaviour
             Debug.Log("Player has left");
         }
     }
+}
 
 
 
@@ -103,4 +113,4 @@ public class Runes : MonoBehaviour
     //    GameObject FourthDoor = GameObject.Find("Door (4)");
     //    thisBoxCollider2D.enabled = false;
     //}
-}
+

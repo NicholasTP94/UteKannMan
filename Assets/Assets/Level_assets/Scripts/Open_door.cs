@@ -8,10 +8,19 @@ public class Open_door : MonoBehaviour
     Animator thisAnimator;
     BoxCollider2D thisBoxCollider2D;
 
+    //public GameObject firstDoor;
+    //public GameObject secondDoor;
+    //public GameObject thirdDoor;
+    //public GameObject fourthDoor;
+    
+    //public int runesForOne = 3;
+    //public int runesForTwo = 6;
+    //public int runesForThree = 9;
+    //public int runesForFour = 12;
     
 
 
-    void Start()
+    public void Start()
     {
         thisAnimator = GetComponent<Animator>();
         //thisAnimator.enabled = false;
@@ -19,7 +28,36 @@ public class Open_door : MonoBehaviour
         thisBoxCollider2D = GetComponent<BoxCollider2D>();
         GetComponent<Runes>();
 
+        //firstDoor = GameObject.Find("door1");
+        //secondDoor = GameObject.Find("door2");
+        //thirdDoor = GameObject.Find("door3");
+        //fourthDoor = GameObject.Find("door4");
+
     }
+
+    //public void RuneActivated()
+    //{
+    //    numberOfRunes++;
+    //    if (numberOfRunes == runesForOne)
+    //    {
+    //        DoorOpens(firstDoor);
+    //    }
+
+    //    if (numberOfRunes == runesForTwo)
+    //    {
+    //        DoorOpens(secondDoor);
+    //    }
+
+    //    if (numberOfRunes == runesForThree)
+    //    {
+    //        DoorOpens(thirdDoor);
+    //    }
+
+    //    if (numberOfRunes == runesForFour)
+    //    {
+    //        DoorOpens(fourthDoor);
+    //    }
+    //}
 
     void Update()
     {
@@ -27,64 +65,21 @@ public class Open_door : MonoBehaviour
         {
             thisAnimator.SetTrigger("DoorOpens");
             thisBoxCollider2D.enabled = false;
-            
+
+
+
         }
     }
+
+    //private void DoorOpens(GameObject gameObject)
+    //{
+    //    thisAnimator.SetTrigger("DoorOpens");
+    //    thisBoxCollider2D.enabled = false;
+    //}
+
 
 
 }
 
 
 
-//if (thisRunes.openDoor1)
-//{
-//    FirstDoor();
-//}
-
-//else
-//{
-//    door1IsOpen = false;
-//}
-
-//if (thisRunes.numberOfRunes == openDoor2)
-//{
-//    door2IsOpen = true;
-//}
-
-//if (thisRunes.numberOfRunes == openDoor3)
-//{
-//    door3IsOpen = true;
-//}
-
-//if (thisRunes.numberOfRunes == openDoor4)
-//{
-//    door4IsOpen = true;
-//}
-
-//if (door1IsOpen)
-//{
-
-//    FirstDoor();
-//    //Open door 1 calling FirstDoor()
-//    //Play opening sound
-//    //Maybe UI reference?
-//}
-
-//if (door2IsOpen)
-//{
-//    //Open door 2 calling SecondDoor()
-//    //Play opening sound
-//    //Maybe UI reference?
-//}
-
-//if (door3IsOpen)
-//{
-//    //Open door 3 calling ThirdDoor()
-//    //Play opening sound
-//    //Maybe UI reference?
-//}
-
-//if (door4IsOpen)
-//{
-//    //Open door 4 calling FourthDoor()
-//}
