@@ -13,6 +13,7 @@ public class Enemy_Boss : MonoBehaviour
     public float lastHealth;
 
     bool isAlive = true;
+    bool isMovable = true;
 
     float animationDelay;
 
@@ -108,6 +109,19 @@ public class Enemy_Boss : MonoBehaviour
                     break;
             }
         }
+        #region Boss movement;
+        if (isAlive)
+        {
+            if (isMovable)
+            {
+                thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
+            }
+            else
+            {
+                thisRigidbody2D.velocity = new Vector2(0, 0);
+            }
+        }
+        #endregion
     }
     private void FixedUpdate()
     {
@@ -190,6 +204,15 @@ public class Enemy_Boss : MonoBehaviour
         // Trigger the specified animation
         thisAnimator.SetTrigger(animationTrigger);
     }
+    // Disables movement
+    IEnumerator DisableMovement(float duration)
+    {
+        Debug.Log("DISABLING DA MOVEMENT...");
+        isMovable = false;
+        yield return new WaitForSeconds(duration);
+        isMovable = true;
+    }
+
     void Idle()
     {
         AttackPlayer = false;
@@ -202,6 +225,7 @@ public class Enemy_Boss : MonoBehaviour
     // Plays the hit animation
     public void Hit()
     {
+        StartCoroutine(DisableMovement(0.6f));
         AttackPlayer = false;
         directionX = 0;
         animationDelay = 0.4f;
@@ -228,6 +252,7 @@ public class Enemy_Boss : MonoBehaviour
 
     void Attack()
     {
+        StartCoroutine(DisableMovement(3f));
         AttackPlayer = true;
         thisAnimator.SetBool("AttackPlayer", AttackPlayer);
 
@@ -246,6 +271,7 @@ public class Enemy_Boss : MonoBehaviour
 
     void Dead()
     {
+        StartCoroutine(DisableMovement(1.2f));
         AttackPlayer = false;
         directionX = 0;
         animationDelay = 0.4f;

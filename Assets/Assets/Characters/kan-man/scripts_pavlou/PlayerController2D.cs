@@ -24,9 +24,11 @@ public class PlayerController2D : MonoBehaviour
     public float health;
     public float maxHealth = 100f;
 
+    bool isMovable = true;
+
     [SerializeField] Image healthDisplay;
     public HealthBar healthBar;
-    
+
 
     float inpHor;
     float directionX;
@@ -63,6 +65,7 @@ public class PlayerController2D : MonoBehaviour
     float lastHit = 0; // for the hit method //
     public bool enemyHit = false; // Checks if the enemy is hit
 
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -78,6 +81,19 @@ public class PlayerController2D : MonoBehaviour
 
     void Update()
     {
+
+        #region Makes the player move
+        if (isMovable)
+        {
+            thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
+            UpdateSound();
+        }
+        else
+        {
+            thisRigidbody2D.velocity = new Vector2(0, thisRigidbody2D.velocity.y);
+        }
+        #endregion
+
         isDead = deathCheck();
         isGrounded = groundCheck();
         inpHor = Input.GetAxis("Horizontal");
@@ -92,7 +108,7 @@ public class PlayerController2D : MonoBehaviour
         {
             if (!heavyAttacked)
             {
-                
+
                 LightAttack();
             }
             heavyAttacked = false;
@@ -140,21 +156,14 @@ public class PlayerController2D : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            StartCoroutine(DisableMovement(1));
             thisAnimator.SetTrigger("Sunshine");
         }
 
-            thisAnimator.SetFloat("yVelocity", thisRigidbody2D.velocity.y);
+        thisAnimator.SetFloat("yVelocity", thisRigidbody2D.velocity.y);
         thisAnimator.SetFloat("Speed", Mathf.Abs(inpHor));
         thisAnimator.SetBool("isGrounded", isGrounded);
     }
-
-    private void FixedUpdate()
-    {
-        thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
-        UpdateSound();
-    }
-
-   
 
     //Part of the attack script
     void checkForHeavyAttack()
@@ -173,21 +182,31 @@ public class PlayerController2D : MonoBehaviour
     {
         if (lastLightAttackTimestamp == 0 || (Time.time - lastLightAttackTimestamp >= lightAttackCooldown))
         {
+            StartCoroutine(DisableMovement(0.8f));
             thisAnimator.SetFloat("Speed", 0f);
             Debug.Log("Quick Slash!!");
             thisAnimator.SetTrigger("Attack");
             AudioManager.instance.PlayOneShot(FMODEvents.instance.lightAttack, this.transform.position);
 
-            Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(1.8f, 1.2f), 0f);
+            Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(2.8f, 1.2f), 0f);
 
             foreach (Collider2D collider in enemies)
             {
                 if (collider.CompareTag("Enemy"))
                 {
-                   // collider.GetComponent<Enemies>().TakeDamage(lightAttackDamage);
-                    Debug.Log("We hit " + collider.name + " for " + lightAttackDamage + " damage.");
-                    collider.GetComponent<Enemy_Ghoul>().TakeDamage(lightAttackDamage); // Hits Enemy
-                    enemyHit = true;
+                    if (!collider.GetComponent<checkBoss>().isBoss)
+                    {
+                        // collider.GetComponent<Enemies>().TakeDamage(lightAttackDamage);
+                        Debug.Log("We hit " + collider.name + " for " + lightAttackDamage + " damage.");
+                        collider.GetComponent<Enemy_Ghoul>().TakeDamage(lightAttackDamage); // Hits Enemy
+                        enemyHit = true;
+                    }
+                    else
+                    {
+                        Debug.Log("We hit " + collider.name + " for " + lightAttackDamage + " damage.");
+                        collider.GetComponent<Enemy_Boss>().TakeDamage(lightAttackDamage); // Hits Enemy
+                        enemyHit = true;
+                    }
                 }
             }
             lastLightAttackTimestamp = Time.time;
@@ -201,26 +220,36 @@ public class PlayerController2D : MonoBehaviour
     {
         if (lastHeavyAttackTimestamp == 0 || (Time.time - lastHeavyAttackTimestamp >= heavyAttackCooldown))
         {
+            StartCoroutine(DisableMovement(1f));
             thisAnimator.SetFloat("Speed", 0f);
             heavyAttacked = true;
             attackTriggerTimeStamp = 0;
 
             Debug.Log("Heavy Slash!");
             thisAnimator.SetTrigger("HeavyAttack");
-
             AudioManager.instance.PlayOneShot(FMODEvents.instance.heavyAttack, this.transform.position);
 
-            Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPointHeavy.position, new(2.1f, 2.4f), 0f);
+            Collider2D[] enemies = Physics2D.OverlapBoxAll(attackPointHeavy.position, new(2.8f, 2.4f), 0f);
 
             foreach (Collider2D collider in enemies)
             {
                 if (collider.CompareTag("Enemy"))
                 {
-                    //collider.GetComponent<Enemies>().TakeDamage(heavyAttackDamage);
-                    Debug.Log("We hit " + collider.name + " for " + heavyAttackDamage + " damage.");
-                    collider.GetComponent<Enemy_Ghoul>().TakeDamage(heavyAttackDamage); // Hits enemy
-                    enemyHit = true;
+                    if (!collider.GetComponent<checkBoss>().isBoss)
+                    {
+                        // collider.GetComponent<Enemies>().TakeDamage(lightAttackDamage);
+                        Debug.Log("We hit " + collider.name + " for " + heavyAttackDamage + " damage.");
+                        collider.GetComponent<Enemy_Ghoul>().TakeDamage(heavyAttackDamage); // Hits Enemy
+                        enemyHit = true;
+                    }
+                    else
+                    {
+                        Debug.Log("We hit " + collider.name + " for " + heavyAttackDamage + " damage.");
+                        collider.GetComponent<Enemy_Boss>().TakeDamage(heavyAttackDamage); // Hits Enemy
+                        enemyHit = true;
+                    }
                 }
+
             }
             lastHeavyAttackTimestamp = Time.time;
         }
@@ -232,9 +261,9 @@ public class PlayerController2D : MonoBehaviour
     private void OnDrawGizmos()
     {
         //light attack tinkering
-        Gizmos.DrawWireCube(attackPoint.position, new Vector3(1.8f, 1.2f, 0f));
+        Gizmos.DrawWireCube(attackPoint.position, new Vector3(2.8f, 1.2f, 0f));
         //heavy attack tinkering
-        Gizmos.DrawWireCube(attackPointHeavy.position, new Vector3(2.1f, 2.4f, 0f));
+        Gizmos.DrawWireCube(attackPointHeavy.position, new Vector3(2.8f, 2.4f, 0f));
     }
 
     bool groundCheck()
@@ -269,7 +298,7 @@ public class PlayerController2D : MonoBehaviour
     }
     private void UpdateSound()
     {
-        if(thisRigidbody2D.velocity.x != 0 && isGrounded)
+        if (thisRigidbody2D.velocity.x != 0 && isGrounded)
         {
             PLAYBACK_STATE playbackState;
             playerFootsteps.getPlaybackState(out playbackState);
@@ -289,11 +318,19 @@ public class PlayerController2D : MonoBehaviour
         if (Time.time > lastHit + 0.1f)
         {
             health -= _damage;
-            
+
             lastHit = Time.time;
 
             //UpdateHealthBar();
         }
+    }
+
+    IEnumerator DisableMovement(float duration)
+    {
+        Debug.Log("DISABLING DA MOVEMENT...");
+        isMovable = false;
+        yield return new WaitForSeconds(duration);
+        isMovable = true;
     }
 
     //private void UpdateHealthBar()

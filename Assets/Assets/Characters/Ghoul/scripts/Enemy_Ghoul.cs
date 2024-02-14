@@ -14,11 +14,11 @@ public class Enemy_Ghoul : MonoBehaviour
     [Range(0, 60)] public float health = 60;
     public float lastHealth;
     bool isAlive = true;
+    bool isMovable = true;
 
     bool attackingPlayer = false;
 
     public float animationDelay;
-    public float movementDelayAfterHit = 0.4f;
 
     float damage = 20;
 
@@ -114,17 +114,22 @@ public class Enemy_Ghoul : MonoBehaviour
                     break;
             }
         }
-    }
 
-    private void FixedUpdate()
-    {
-
+        #region Ghoul movement;
         if (isAlive)
         {
-            thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
+            if (isMovable)
+            {
+                thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
+            }
+            else
+            {
+                thisRigidbody2D.velocity = new Vector2(0, 0);
+            }
         }
-    }
+        #endregion
 
+    }
     void Logic()
     {
 
@@ -198,12 +203,13 @@ public class Enemy_Ghoul : MonoBehaviour
         // Trigger the specified animation
         thisAnimator.SetTrigger(animationTrigger);
     }
-
-    //Creates movement delay
-    IEnumerator MovementDelay()
+    // Disables movement
+    IEnumerator DisableMovement(float duration)
     {
-        yield return new WaitForSeconds(movementDelayAfterHit);
-        directionX = 1; // or any other default value you want after the delay
+        Debug.Log("DISABLING DA MOVEMENT...");
+        isMovable = false;
+        yield return new WaitForSeconds(duration);
+        isMovable = true;
     }
     void Patrol()
     {
@@ -232,12 +238,11 @@ public class Enemy_Ghoul : MonoBehaviour
     // Plays the hit animation
     public void Hit()
     {
+        StartCoroutine(DisableMovement(0.6f));
         attackingPlayer = false;
         animationDelay = 0.4f;
-        directionX = 0;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
         StartCoroutine(PlayAnimationWithDelay("GhoulHit", animationDelay));
-        StartCoroutine(MovementDelay());
     }
 
     void Chase()
@@ -259,12 +264,11 @@ public class Enemy_Ghoul : MonoBehaviour
 
     void Attack()
     {
+        StartCoroutine(DisableMovement(0.8f));
         attackingPlayer = true;
-        directionX = 0;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
 
         LookAtRightDirection();
-        StartCoroutine(MovementDelay());
 
         if (Time.time >= lastAttack)
         {
@@ -277,12 +281,11 @@ public class Enemy_Ghoul : MonoBehaviour
 
     void Dead()
     {
+        StartCoroutine(DisableMovement(1.2f));
         attackingPlayer = false;
         thisAnimator.SetBool("attackingPlayer", attackingPlayer);
-        directionX = 0;
         animationDelay = 0.05f;
         StartCoroutine(PlayAnimationWithDelay("GhoulDeath", animationDelay));
-        StartCoroutine(MovementDelay());
         Destroy(gameObject, 1.2f);
         return;
     }
