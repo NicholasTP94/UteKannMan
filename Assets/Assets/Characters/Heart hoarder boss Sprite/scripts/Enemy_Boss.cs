@@ -12,7 +12,7 @@ public class Enemy_Boss : MonoBehaviour
     [Range(0, 240)] public float health = 240;
     public float lastHealth;
 
-    bool isAlive = true;
+   public bool BossIsAlive = true;
     bool isMovable = true;
 
     float animationDelay;
@@ -84,7 +84,7 @@ public class Enemy_Boss : MonoBehaviour
         #endregion
 
 
-        if (isAlive)
+        if (BossIsAlive)
         {
             Logic();
 
@@ -110,7 +110,7 @@ public class Enemy_Boss : MonoBehaviour
             }
         }
         #region Boss movement;
-        if (isAlive)
+        if (BossIsAlive)
         {
             if (isMovable)
             {
@@ -126,7 +126,7 @@ public class Enemy_Boss : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (isAlive)
+        if (BossIsAlive)
         {
             thisRigidbody2D.velocity = new Vector2(directionX, thisRigidbody2D.velocity.y);
         }
@@ -272,6 +272,7 @@ public class Enemy_Boss : MonoBehaviour
     void Dead()
     {
         StartCoroutine(DisableMovement(1.2f));
+        BossIsAlive = false;
         AttackPlayer = false;
         directionX = 0;
         animationDelay = 0.4f;

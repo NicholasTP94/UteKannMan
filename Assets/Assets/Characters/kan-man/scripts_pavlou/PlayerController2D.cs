@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using FMOD.Studio;
+using System.Threading;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class PlayerController2D : MonoBehaviour
 {
+    public GameObject youWinPanel;
     public GameObject youDiedPanel;
     SpriteRenderer thisSpriteRenderer;
     Rigidbody2D thisRigidbody2D;
@@ -17,6 +19,7 @@ public class PlayerController2D : MonoBehaviour
 
     public GameObject attackPointLeft;
     public GameObject attackPointRight;
+    public Enemy_Boss enemy_Boss;
 
     public GameObject attackPointLeftHeavy;
     public GameObject attackPointRightHeavy;
@@ -72,6 +75,7 @@ public class PlayerController2D : MonoBehaviour
         health = maxHealth;
         playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
         youDiedPanel.SetActive(false);
+        youWinPanel.SetActive(false);
         thisSpriteRenderer = GetComponent<SpriteRenderer>();
         thisRigidbody2D = GetComponent<Rigidbody2D>();
         thisAnimator = GetComponent<Animator>();
@@ -81,6 +85,12 @@ public class PlayerController2D : MonoBehaviour
 
     void Update()
     {
+            if (enemy_Boss.BossIsAlive == false)
+            {
+                Time.timeScale = 0f;
+                Thread.Sleep(1000);
+                youWinPanel.SetActive(true);
+            }
 
         #region Makes the player move
         if (isMovable)
@@ -135,7 +145,6 @@ public class PlayerController2D : MonoBehaviour
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, this.transform.position);
                 thisRigidbody2D.velocity = new Vector2(thisRigidbody2D.velocity.x, jumpForce);
                 doubleJump = false;
-
             }
         }
 
@@ -333,9 +342,12 @@ public class PlayerController2D : MonoBehaviour
         isMovable = true;
     }
 
-    //private void UpdateHealthBar()
+    //void WinGame()
     //{
-    //    healthBar.UpdateHealth();
+    //    if (enemy_Boss.BossIsAlive == false)
+    //    {
+    //        youWinPanel.SetActive(true);
+    //        Time.timeScale = 0f;
+    //    }
     //}
-
 }

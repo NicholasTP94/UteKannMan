@@ -20,7 +20,7 @@ public class Enemy_Ghoul : MonoBehaviour
 
     public float animationDelay;
 
-    float damage = 20;
+    public float damage = 20;
 
     float directionX = 1;
 
