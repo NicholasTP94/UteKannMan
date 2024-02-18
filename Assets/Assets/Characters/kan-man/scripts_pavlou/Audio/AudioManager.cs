@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     private List<EventInstance> eventsInstances;
     private List<StudioEventEmitter> eventEmitters;
 
-    private EventInstance ambienceEventInstance;
+    private EventInstance musicEventInstance;
 
 
     public static AudioManager instance {  get; private set; }
@@ -27,13 +27,18 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        InitializeAmbience(FMODEvents.instance.level1OST);
+        InitializeMusic(FMODEvents.instance.level1Music);
     }
 
-    private void InitializeAmbience(EventReference ambienceEventReference)
+    private void InitializeMusic(EventReference musicEventReference)
     {
-        ambienceEventInstance = CreateEventInstance(ambienceEventReference);
-        ambienceEventInstance.start();
+        musicEventInstance = CreateInstance(musicEventReference);
+        musicEventInstance.start();
+    }
+
+    public void SetMusicArea(MusicAreaSwitch area)
+    {
+        musicEventInstance.setParameterByName("area", (float) area);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
@@ -41,7 +46,7 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
-    public EventInstance CreateEventInstance(EventReference eventReference)
+    public EventInstance CreateInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         eventsInstances.Add(eventInstance);
@@ -67,10 +72,10 @@ public class AudioManager : MonoBehaviour
         {
             emitter.Stop();
         }
-        if (ambienceEventInstance.isValid())
+        if (musicEventInstance.isValid())
         {
-            ambienceEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            ambienceEventInstance.release();
+            musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            musicEventInstance.release();
         }
     }
 

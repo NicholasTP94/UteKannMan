@@ -263,6 +263,7 @@ public class Enemy_Boss : MonoBehaviour
 
         if (Time.time >= lastAttack)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.bossAttacks, this.transform.position);
             StartCoroutine(PlayAnimationWithDelay("BossAttack", animationDelay));
             lastAttack = Time.time + attackDelay;
             player.GetComponent<PlayerController2D>().Damage(damage);

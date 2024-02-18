@@ -73,7 +73,7 @@ public class PlayerController2D : MonoBehaviour
     {
         Time.timeScale = 1f;
         health = maxHealth;
-        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
+        playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerFootsteps);
         youDiedPanel.SetActive(false);
         youWinPanel.SetActive(false);
         thisSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -302,8 +302,9 @@ public class PlayerController2D : MonoBehaviour
     }
     void ActivateDeathPanel()
     {
-        youDiedPanel.SetActive(true);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.playerDied, this.transform.position);
         Time.timeScale = 0f;
+        youDiedPanel.SetActive(true);
     }
     private void UpdateSound()
     {

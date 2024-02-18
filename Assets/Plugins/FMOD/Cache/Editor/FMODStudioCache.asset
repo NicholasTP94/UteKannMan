@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638433786365291883
+  lastModified: 638438828016058336
   FileSizes:
   - Name: Desktop
-    Value: 1662
+    Value: 1814
   Exists: 1
 --- !u!114 &-7043617513293674639
 MonoBehaviour:
@@ -62,11 +62,38 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.streams.bank
   Name: Level1Bank.streams
   StudioPath: bank:/Level1Bank.streams
-  lastModified: 638432949370134092
+  lastModified: 638438815843534059
   FileSizes:
   - Name: Desktop
-    Value: 2830656
+    Value: 4562272
   Exists: 1
+--- !u!114 &-7002029440309529905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/BossAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/BossAttack
+  Guid:
+    Data1: 1759457474
+    Data2: 1273349054
+    Data3: -962447940
+    Data4: 1625188892
+  Banks:
+  - {fileID: 6101829983760950861}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6066619923924049842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +163,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638432181711612479
+  lastModified: 638438828015998276
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -186,6 +213,33 @@ MonoBehaviour:
     Data2: 1276854836
     Data3: 666493367
     Data4: -2100240078
+  Banks:
+  - {fileID: 6101829983760950861}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2732939865687798915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/PlayerDied
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/PlayerDied
+  Guid:
+    Data1: 762830522
+    Data2: 1171267071
+    Data3: -878452065
+    Data4: -528946874
   Banks:
   - {fileID: 6101829983760950861}
   IsStream: 0
@@ -257,12 +311,14 @@ MonoBehaviour:
   - {fileID: 3849631316242079381}
   - {fileID: -5565540826890405160}
   - {fileID: 9077233407292254864}
+  - {fileID: -7002029440309529905}
+  - {fileID: -2732939865687798915}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5493160485279772541}
   StringsBanks:
   - {fileID: -7797496162982634686}
-  cacheTime: 638433786365507156
+  cacheTime: 638438828241435421
   cacheVersion: 131616
 --- !u!114 &546236922133864096
 MonoBehaviour:
@@ -279,10 +335,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.bank
   Name: Level1Bank
   StudioPath: bank:/Level1Bank
-  lastModified: 638433786363678987
+  lastModified: 638438815843183755
   FileSizes:
   - Name: Desktop
-    Value: 2916
+    Value: 5830
   Exists: 1
 --- !u!114 &2229112828904990589
 MonoBehaviour:
@@ -299,10 +355,36 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.assets.bank
   Name: Master.assets
   StudioPath: bank:/Master.assets
-  lastModified: 638432949370484318
+  lastModified: 638438828016023297
   FileSizes:
   - Name: Desktop
     Value: 494
+  Exists: 1
+--- !u!114 &2528591100207226526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1Music/AreaSwitch
+  m_EditorClassIdentifier: 
+  Name: AreaSwitch
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1747647510
+    data2: 1519786134
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - CasualArea
+  - BossArea
   Exists: 1
 --- !u!114 &3849631316242079381
 MonoBehaviour:
@@ -373,10 +455,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.assets.bank
   Name: SFX.assets
   StudioPath: bank:/SFX.assets
-  lastModified: 638433786365431981
+  lastModified: 638438828241245260
   FileSizes:
   - Name: Desktop
-    Value: 309472
+    Value: 350016
   Exists: 1
 --- !u!114 &5977600382651349407
 MonoBehaviour:
@@ -401,10 +483,11 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 2528591100207226526}
   MinDistance: 1
   MaxDistance: 20
-  Length: 81600
+  Length: 0
 --- !u!114 &6101829983760950861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,10 +503,10 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638433786365507156
+  lastModified: 638438828241040077
   FileSizes:
   - Name: Desktop
-    Value: 14802
+    Value: 17112
   Exists: 1
 --- !u!114 &6287523058283627160
 MonoBehaviour:
@@ -467,7 +550,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Level1Bank.assets.bank
   Name: Level1Bank.assets
   StudioPath: bank:/Level1Bank.assets
-  lastModified: 638432949369439974
+  lastModified: 638438815843203775
   FileSizes:
   - Name: Desktop
     Value: 494
@@ -487,7 +570,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/SFX.streams.bank
   Name: SFX.streams
   StudioPath: bank:/SFX.streams
-  lastModified: 638432949371673939
+  lastModified: 638438828241435421
   FileSizes:
   - Name: Desktop
     Value: 1269056
@@ -507,7 +590,7 @@ MonoBehaviour:
   Path: Assets/FMOD/UteKannManFmodTest/Build/Desktop/Master.streams.bank
   Name: Master.streams
   StudioPath: bank:/Master.streams
-  lastModified: 638432949370900935
+  lastModified: 638438828016043317
   FileSizes:
   - Name: Desktop
     Value: 494
